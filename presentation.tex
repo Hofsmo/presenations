@@ -1,0 +1,27 @@
+\documentclass[screen, aspectratio=43]{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+
+\usetheme[style=ntnu,language=en]{ntnu2015}
+\useoutertheme{infolines}
+
+\title{Version control for researchers}
+\author{Sigurd Hofsmo Jakobsen}
+\institute[NTNU]{Department of electric power engineering}
+\date{\today}
+
+\AtBeginSection[]
+{
+	\begin{frame}
+		\frametitle{Outline}
+		\tableofcontents[currentsection]
+	\end{frame}
+}
+
+
+\begin{document}
+	\ntnutitlepage
+	\input{tex/what.tex}
+\end{document}
+
