@@ -21,4 +21,63 @@
 
 \begin{frame}
 	\frametitle{Smarter way of doing it}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}[<+->]
+				\item Equivalent of storing your stuff on M
+				\item Included in MAC
+				\item Easy to set up
+				\item Still difficult to collaborate
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\includegraphics[width=\textwidth]{./pictures/local.png}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Centralized version control}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}[<+->]
+				\item Examples:
+						\begin{itemize}[<+->]
+							\item CVS
+							\item subversion
+							\item perforce
+						\end{itemize}
+				\item Easy to collaborate
+				\item Check out specific versions
+				\item Single point of failure (N-0)
+				\item If the server dies only checked out versions can be saved
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\includegraphics[width=\textwidth]{./pictures/centralized.png}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+		\frametitle{Distsributed version control}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}[<+->]
+				\item Examples:
+					\begin{itemize}[<+->]
+						\item Git
+						\item Mercurial
+						\item Bazaar
+						\item Darcs
+					\end{itemize}
+				\item Same advantages as centralized version control
+				\item All users can reconstruct the project
+				\item Easy to work against multiple servers
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\includegraphics[width=\textwidth]{./pictures/distributed.png}
+		\end{column}
+	\end{columns}
 \end{frame}
