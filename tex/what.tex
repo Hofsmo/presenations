@@ -82,18 +82,26 @@
 	\end{columns}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
+
 	\frametitle{Should you use version control?}
 	\begin{columns}
-		\begin{column}{0.5\textwidht}
+		\begin{column}{0.5\textwidth}
 			\begin{itemize}[<+->]
 				\item Do you write code?
 					\begin{itemize}[<+->]
 						\item If yes: use version control
 					\end{itemize}
-				\item Never copy code -_-+
+				\item Never copy code -\_-+
 				\item Write functions and keep them version controlled
 				\item Remember code is a virtual laboratory
-				\end{itemize}
+				\item Versions can for instance be tagged with name of publication(reproducability for review)
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			Dont do this:
+			\lstinputlisting[style=Matlab-editor]{./examples/experiment.m}
+		\end{column}
+	\end{columns}
 
-
+\end{frame}
