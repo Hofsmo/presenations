@@ -1,0 +1,41 @@
+\documentclass[screen, aspectratio=43]{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+
+\usepackage{tikz}
+\usepackage{tikzscale}
+\usetikzlibrary{arrows, shapes}
+%\tikzexternalize[prefix=tikz/]
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.14}
+
+
+\usetheme{Warsaw}
+\useoutertheme{infolines}
+
+\title{Vector fitting for estimation of turbine governor parameters}
+\author{Sigurd Hofsmo Jakobsen}
+\institute[NTNU]{Department of electric power engineering}
+\date{\today}
+
+\AtBeginSection[]
+{
+		\begin{frame}
+		\frametitle{Outline}
+		\tableofcontents[currentsection]
+	\end{frame}
+}
+
+
+\begin{document}
+	\titlepage
+	\input{tex/what.tex}
+	%\input{tex/git.tex}
+	%\input{tex/use_git.tex}
+	%\input{tex/gitflow.tex}
+	%\input{tex/travis.tex}
+	%\input{tex/references.tex}
+\end{document}
+
