@@ -1,0 +1,95 @@
+
+@article{grivet-talocia_package_2003,
+	title = {Package macromodeling via time-domain vector fitting},
+	volume = {13},
+	issn = {1531-1309},
+	doi = {10.1109/LMWC.2003.819378},
+	abstract = {This paper addresses the construction of lumped macromodels for package structures. A technique named Time-Domain Vector Fitting ({TD}-{VF}) is introduced for the identification of the dominant poles of the structure. This method uses as raw data transient excitations and responses at the ports of the structure. These responses are easily obtained from transient full-wave electromagnetic solvers based, e.g., on Finite Differences. The rational approximation can be easily synthesized into a {SPICE}-compatible subcircuit providing a broadband approximation to the input-output behavior of the package.},
+	pages = {472--474},
+	number = {11},
+	journaltitle = {{IEEE} Microwave and Wireless Components Letters},
+	author = {Grivet-Talocia, S.},
+	date = {2003-11},
+	keywords = {Circuit simulation, Electromagnetic compatibility, Electromagnetic modeling, Electromagnetic transients, Electronics packaging, equivalent circuits, finite difference method, finite difference methods, Frequency, Integrated circuit interconnections, lumped macromodel, package structure, packaging, pole identification, poles and zeros, rational approximation, {SPICE}, {SPICE} subcircuit, Time domain analysis, time-domain analysis, time-domain vector fitting, transient analysis, transient full-wave electromagnetic simulation},
+	file = {IEEE Xplore Abstract Record:/home/sigurd/.zotero/zotero/h97xxbq0.default/zotero/storage/VTFI4BAB/login.html:text/html;IEEE Xplore Full Text PDF:/home/sigurd/.zotero/zotero/h97xxbq0.default/zotero/storage/7DXWCBT3/Grivet-Talocia - 2003 - Package macromodeling via time-domain vector fitti.pdf:application/pdf}
+}
+
+@article{ubolli_comparison_2011,
+	title = {Comparison of Methods for Rational Approximation of Simulated Time-Domain Responses: {ARMA}, {ZD}-{VF}, and {TD}-{VF}},
+	volume = {26},
+	issn = {0885-8977},
+	doi = {10.1109/TPWRD.2010.2080361},
+	shorttitle = {Comparison of Methods for Rational Approximation of Simulated Time-Domain Responses},
+	abstract = {This paper compares alternative methods for linear modeling of simulated time-domain responses by a rational approximation. The traditional approach based on autoregressive moving average ({ARMA}) is compared with two alternative approaches that have been introduced in recent years: Z-Domain Vector Fitting ({ZD}-{VF}) and Time-Domain Vector Fitting ({TD}-{VF}). Following a description of their implementation and fundamental properties, the methods are applied to the modeling of a frequency-dependent network equivalent. It is shown that {TD}-{VF} offers superior results in terms of accuracy and robustness, and the model has guaranteed stable poles. The {ARMA} approach requires higher orders than the others and the resulting model can be unstable. The {ZD}-{VF} approach is robust and gives a model with stable poles, but it produces incorrect simulation results when applied to truncated time-domain responses. The inaccuracy is caused mainly by the conversion of time-domain data into the z-domain. The fitting process of {ARMA} is faster than with the other approaches since it does not involve iterative pole relocations.},
+	pages = {279--288},
+	number = {1},
+	journaltitle = {{IEEE} Transactions on Power Delivery},
+	author = {Ubolli, A. and Gustavsen, B.},
+	date = {2011-01},
+	keywords = {\$z\$ -domain vector fitting, Approximation methods, approximation theory, {ARMA}, autoregressive moving average, Autoregressive moving average ({ARMA}), autoregressive moving average processes, Autoregressive processes, Convolution, frequency dependent network equivalent, frequency-dependent network equivalent ({FDNE}), Frequency domain analysis, linear modeling, macromodel, Mathematical model, power system simulation, rational approximation, simulated time domain response, {TD}-{VF}, Time domain analysis, time-domain analysis, time-domain vector fitting, Transfer functions, transient analysis, Z-domain vector fitting, {ZD}-{VF}},
+	file = {IEEE Xplore Abstract Record:/home/sigurd/.zotero/zotero/h97xxbq0.default/zotero/storage/GZECX7ZW/articleDetails.html:text/html;IEEE Xplore Full Text PDF:/home/sigurd/.zotero/zotero/h97xxbq0.default/zotero/storage/8EUSW947/Ubolli og Gustavsen - 2011 - Comparison of Methods for Rational Approximation o.pdf:application/pdf}
+}
+
+@inproceedings{ubolli_digital_2011,
+	title = {A digital filtering approach for Time Domain Vector Fitting},
+	doi = {10.1109/SPI.2011.5898833},
+	abstract = {Linear macromodels can be extracted from simulated or measured time domain responses using the Time Domain Vector Fitting ({TD}-{VF}) algorithm. In this paper we show that data preprocessing by means of a digital filter ({FIR}) can reduce the model order and avoid false oscillations in the model's response. The procedure is demonstrated for the modeling of a cable from simulated data and for the modeling of power transformers from measurements.},
+	eventtitle = {2011 15th {IEEE} Workshop on Signal Propagation on Interconnects ({SPI})},
+	pages = {25--28},
+	booktitle = {2011 15th {IEEE} Workshop on Signal Propagation on Interconnects ({SPI})},
+	author = {Ubolli, A. and Gustavsen, B.},
+	date = {2011-05},
+	keywords = {Data models, digital filtering, Finite impulse response filter, {FIR} filter, {FIR} filters, Fitting, Linear macromodels, Low pass filters, power transformers, {TD}-{VF} algorithm, Time domain analysis, time-domain analysis, time domain vector fitting},
+	file = {IEEE Xplore Abstract Record:/home/sigurd/.zotero/zotero/h97xxbq0.default/zotero/storage/RRRU78V7/articleDetails.html:text/html;IEEE Xplore Full Text PDF:/home/sigurd/.zotero/zotero/h97xxbq0.default/zotero/storage/S5B4EU4C/Ubolli og Gustavsen - 2011 - A digital filtering approach for Time Domain Vecto.pdf:application/pdf}
+}
+
+@inproceedings{ubolli_applicability_2010,
+	title = {Applicability of time domain and z-domain Vector Fitting to rational modeling from time domain responses with consideration to circuit solver integration method},
+	doi = {10.1109/SPI.2010.5483573},
+	abstract = {Linear macromodels can be extracted from simulated time domain responses, for instance using the Time Domain Vector Fitting ({TD}-{VF}) and the z-domain Vector Fitting ({ZD}-{VF}) method. In this paper we show that the {TD}-{VF} yields more accurate results than {ZD}-{VF}, mainly because of its ability to handle truncated responses. This makes {TD}-{VF} more applicable to practical applications. In addition, we show that with {TD}-{VF} one may in certain situations greatly improve the accuracy of the extracted model by introducing the same numerical integration method in the extraction routine as the one used by the circuit simulator.},
+	eventtitle = {2010 {IEEE} 14th Workshop on Signal Propagation on Interconnects ({SPI})},
+	pages = {69--72},
+	booktitle = {2010 {IEEE} 14th Workshop on Signal Propagation on Interconnects ({SPI})},
+	author = {Ubolli, A. and Gustavsen, B.},
+	date = {2010-05},
+	keywords = {Circuit simulation, circuit simulator, circuit solver integration method, Convolution, Fitting, Frequency dependence, Frequency domain analysis, integration, Linear macromodels, numerical integration method, power system analysis computing, Power system modeling, rational modeling, Robustness, simulated time domain responses, {TD}-{VF}, time-domain analysis, time domain vector fitting, Transfer functions, vectors, Z-domain vector fitting, {ZD}-{VF}},
+	file = {IEEE Xplore Abstract Record:/home/sigurd/.zotero/zotero/h97xxbq0.default/zotero/storage/UGXVEBBB/abs_all.html:text/html;IEEE Xplore Full Text PDF:/home/sigurd/.zotero/zotero/h97xxbq0.default/zotero/storage/G3FVTQJ7/Ubolli og Gustavsen - 2010 - Applicability of time domain and z-domain Vector F.pdf:application/pdf}
+}
+
+@book{stefano_grivet-talocia_passive_2016,
+	title = {Passive Macromodeling Theory and Applications},
+	isbn = {978-1-118-09491-4},
+	series = {Wiley Series in Microwave and Optical Enineering},
+	publisher = {John Wiley \& Sons},
+	author = {{Stefano Grivet-Talocia} and {Bjørn Gustavsen}},
+	date = {2016}
+}
+
+@article{gustavsen_rational_1999,
+	title = {Rational approximation of frequency domain responses by vector fitting},
+	volume = {14},
+	issn = {0885-8977},
+	doi = {10.1109/61.772353},
+	abstract = {The paper describes a general methodology for the fitting of measured or calculated frequency domain responses with rational function approximations. This is achieved by replacing a set of starting poles with an improved set of poles via a scaling procedure. A previous paper (Gustavsen et al., 1997) described the application of the method to smooth functions using real starting poles. This paper extends the method to functions with a high number of resonance peaks by allowing complex starting poles. Fundamental properties of the method are discussed and details of its practical implementation are described. The method is demonstrated to be very suitable for fitting network equivalents and transformer responses. The computer code is in the public domain, available from the first author},
+	pages = {1052--1061},
+	number = {3},
+	journaltitle = {{IEEE} Transactions on Power Delivery},
+	author = {Gustavsen, B. and Semlyen, A.},
+	date = {1999-07},
+	keywords = {Computational modeling, computer simulation, Convolutional codes, Frequency dependence, Frequency domain analysis, frequency-domain analysis, frequency domain responses, Frequency measurement, function approximation, poles and zeros, power network equivalents, power system analysis computing, power system dynamics, Power system modeling, power system simulation, Power system transients, power system transients modelling, rational approximation, Resonance, resonance peaks, scaling procedure, smooth functions, starting poles, transformer responses, vector fitting, vectors},
+	file = {IEEE Xplore Abstract Record:/home/sigurd/.zotero/zotero/h97xxbq0.default/zotero/storage/CJKM5AVF/abs_all.html:text/html;IEEE Xplore Full Text PDF:/home/sigurd/.zotero/zotero/h97xxbq0.default/zotero/storage/E37XC6SE/Gustavsen og Semlyen - 1999 - Rational approximation of frequency domain respons.pdf:application/pdf}
+}
+
+@article{ramirez_vector_2009,
+	title = {Vector Fitting-Based Calculation of Frequency-Dependent Network Equivalents by Frequency Partitioning and Model-Order Reduction},
+	volume = {24},
+	issn = {0885-8977},
+	doi = {10.1109/TPWRD.2008.921139},
+	abstract = {This paper presents a methodology to identify a frequency-dependent network equivalent from a highly resonant frequency response and in a broad range of frequencies. Primarily, the identification process consists on dividing the complete frequency range into a number of subranges either uniformly spaced or by containing an equal number of resonance peaks. Vector fitting ({VF}) is then applied to each subrange, yielding an accurate local approximation. A refinement of the local set of partial fractions is made through model-order reduction to remove spurious (redundant) poles. The final equivalent comprises a reduced number of poles, keeping the computational load lower than when applying {VF} to the whole range of frequencies while giving a similar rms error. An illustrative example involving a transmission system is presented for validation of the procedures above.},
+	pages = {410--415},
+	number = {1},
+	journaltitle = {{IEEE} Transactions on Power Delivery},
+	author = {Ramirez, A.},
+	date = {2009-01},
+	keywords = {Circuit simulation, Circuit synthesis, Computational modeling, equivalent circuits, Frequency conversion, frequency-dependent network equivalents, frequency-domain synthesis, frequency partitioning, highly resonant frequency response, Least squares approximation, mean square error methods, model-order reduction, model reduction, Network synthesis, poles, rational approximation, reduced order systems, Resonance, Resonant frequency, rms error, transmission networks, transmission system, vector fitting}
+}

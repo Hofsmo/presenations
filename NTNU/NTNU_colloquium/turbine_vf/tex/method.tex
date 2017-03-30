@@ -1,0 +1,47 @@
+\section[Method]{Method for identifying governor transfer functions}
+\begin{frame}
+	\frametitle{Detailing of research questions}
+	The method was designed such that the following questions could be answered regarding:
+	\begin{enumerate}
+		\item<1-> Is configuration easy?
+		\item<2-> Are the results valid outside of the measurement time window?
+		\item<3-> Can the results be obtained using a small measurement time window?
+		\item<4-> Is the method fast?
+	\end{enumerate}
+\end{frame}
+\begin{frame}
+	\frametitle{Steps in the identification method}
+	\begin{enumerate}
+			\item<1-> Data collection
+			\item<2-> Partitioning of data
+			\item<3-> Preprocessing of data
+			\item<4-> Vector fitting on all data partitions
+			\item<4-> Cross validation and model selection
+	\end{enumerate}
+\end{frame}
+\begin{frame}
+	\frametitle{Data collection}
+	\begin{itemize}
+		\item<1-> Real PMU\footnote{Phasor measurement unit (PMU)} measurements from the Norwegian system
+		\item<2-> Six generators at two different locations. 
+		\item<3-> The data sets are one hour long and the sampling frequency was $50Hz$.
+		\item<4-> Data sets with obvious nonlinearities such as ramping and saturation were discarded.
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{Preprocessing of data}
+	\begin{itemize}
+		\item<1-> All data are decimated with a factor of 50.
+		\item<2-> The average is removed from all datasets.
+		\item<3-> The data is run through a low pass antialiasing filter.
+		\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{Cross validation and model selection}
+		\begin{itemize}
+			\item<1-> No signal selection method was developed.
+			\item<2-> Instead all possible cross validations were attempted.
+			\item<3-> For a partition with length five minutes that adds up to $132$ possibilities for cross validation.
+			\item<4-> Self validation was not allowed.
+		\end{itemize}
+\end{frame}
