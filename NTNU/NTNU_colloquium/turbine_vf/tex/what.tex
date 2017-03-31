@@ -22,8 +22,36 @@
 		\frametitle{Hydro turbine governors}
 				\begin{itemize}
 						\item Typically implemented as a PID controller
+						
 				\end{itemize}
 				\begin{figure}
 					\includegraphics{./pictures/PID.tikz}
 			\end{figure}
+\begin{equation}
+		H = -K_p\frac{1+sT_D}{1+sT_f}\cdot\frac{1+sT_i}{\rho K_p+sT_i}
+		\label{eq:H}
+\end{equation}
+From~\eqref{eq:H} one can see that the system's poles will be placed at:
+\begin{equation}
+	p_1=-\frac{1}{T_f},~p_2=-\frac{\rho K_p}{T_i}
+	\label{eq:p}
+\end{equation}
 \end{frame}
+\begin{frame}
+		\frametitle{Research questions}
+		\begin{itemize}
+				\item<1-> Can identification of turbine governors be used to analyze the frequency quality?
+				\item<2-> Can the identification be done using ambient power system data?
+				\item<3-> Is vector fitting a suitable method for doing the identification?
+		\end{itemize}
+\end{frame}
+\begin{frame}
+		\frametitle{Previous work}
+		\begin{itemize}
+				\item The ARX\footnote{Autoregressive exogenous} model structure was used on parts of the same dataset as used in this study in~\cite{dinh_thuc_duong_estimation_2016}
+				\item The authors of~\cite{hatziargyriou_identification_2001} use constrained optimization on disturbance data from the Crete power system.
+				\item and the authors of~\cite{aghamolki_identification_2015} apply an unscented Kalman filter to the measurements from a trip event in the Midcontinent Independent System.
+				\item  Other studies using only simulation data also exist.
+		\end{itemize}
+\end{frame}
+
