@@ -1,0 +1,69 @@
+\section{Results}
+\begin{frame}
+	\frametitle{Choice of starting poles}
+		\begin{columns}[c]
+			\column{0.5\textwidth}
+			\begin{itemize}
+				\item<1-> Starting poles should be chosen in the frequency range of interest.
+				\item<2-> They can be:
+				\begin{itemize}
+					\item purely real
+					\item purely complex
+					\item or a combination
+				\end{itemize}
+				\item<3-> The poles were linearly spaced from zero up until the end of the interval.
+				\item<4-> Purely complex starting poles performs more or less the same as mixed poles.
+				\item<5-> There is little difference between the length of the time windows.
+			\end{itemize}
+			\column{0.5\textwidth}
+				\resizebox{\columnwidth}{!}{
+					\centering
+					\begin{tabular}{|c|c|c|c|c|}
+						\hline
+						Minutes & Poles & $[0,0.5]$ & $[0,0.1]$ & $[0,0.05]$ \\ \hline \hline
+						\multirow{3}{*}{$5$} & Real & \cellcolor{red}$66.66\%$ & \cellcolor{red}$66.66\%$ & \cellcolor{red}$66.66\%$ \\ \cline{2-5}
+						& Complex & $73.07\%$ & $74.60\%$ & $73.53\%$ \\ \cline{2-5}
+						& Mixed & $\cellcolor{green}74.89\%$ & $74.69\%$ & $74.42\%$ \\ \hline \hline
+						\multirow{3}{*}{$10$} & Real & \cellcolor{red}$68.45\%$ & \cellcolor{red}$68.45\%$ & \cellcolor{red}$68.45\%$ \\ \cline{2-5}
+						& Complex & $72.49\%$ & \cellcolor   {green} $73.84\%$ & $72.75\%$ \\ \cline{2-5}
+						& Mixed & $73.49\%$ & $72.60\%$ & $73.73\%$ \\ \hline \hline
+						\multirow{3}{*}{$15$} & Real & \cellcolor{red}$66.01\%$ &\cellcolor{red} $66.01\%$ &\cellcolor{red} $66.01\%$ \\ \cline{2-5}
+						& Complex & $69.72\%$ & $70.40\%$ & $70.33\%$ \\ \cline{2-5}
+						& Mixed & \cellcolor{green} $70.86\%$ & $70.43\%$ & $70.12\%$ \\ \hline \hline
+						\multirow{3}{*}{$20$} & Real & \cellcolor{red} $70.73\%$ & \cellcolor{red} $70.73\%$ & \cellcolor{red} $70.73\%$ \\ \cline{2-5}
+						& Complex & \cellcolor{green} $72.53\%$ & $72.27\%$ &  $71.16\%$ \\ \cline{2-5}
+						& Mixed & $71.28\%$ & $71.91\%$ & $72.38\%$ \\ \hline \hline
+						\multirow{3}{*}{$25$} & Real & \cellcolor{red}$60.27\%$ & \cellcolor{red} $60.27\%$ &\cellcolor{red} $60.27\%$ \\ \cline{2-5}
+						& Complex & \cellcolor{green} $63.45\%$ & $62.31\%$ & \cellcolor{green} $63.45\%$ \\ \cline{2-5}
+						& Mixed & $63.14\%$ & \cellcolor{green} $63.45\%$ & \cellcolor{green} $63.45\%$ \\ \hline \hline
+						\multirow{3}{*}{$30$} & Real & \cellcolor{red}$68.01\%$ & \cellcolor{red} $68.01\%$ &\cellcolor{red} $68.01\%$ \\ \cline{2-5}
+						& Complex & $71.75\%$ & $71.45\%$ & \cellcolor{green} $72.54\%$ \\ \cline{2-5}
+						& Mixed & $72.52\%$ & $71.44\%$ & $72.21\%$ \\ \hline \hline
+					\end{tabular}
+				}
+						\end{columns}
+\end{frame}
+\begin{frame}[fragile]
+	\frametitle{Cross validation using distant data sets}
+		\includegraphics<1>[width=0.5\textwidth]{./pictures/frequencies.tikz}
+		\includegraphics<1>[width=0.5\textwidth]{./pictures/powers.tikz}
+		\includegraphics<2>[width=0.5\textwidth]{./pictures/againstFall.tikz}
+		\includegraphics<2>[width=0.5\textwidth]{./pictures/againstSpring.tikz}
+\end{frame}
+\begin{frame}
+	\frametitle{Estimated droop and bandwidth}
+	\begin{columns}[c]
+	\column{0.6\textwidth}
+		\includegraphics[width=\textwidth]{./pictures/bode.tikz}
+
+\column{0.4\textwidth}
+		\resizebox{\columnwidth}{!}{
+		\begin{tabular}{|c|c|c|}
+				\hline
+				Dataset & Droop[\%] & Bandwidth[mHz] \\ \hline
+				Fall 2015 & 10 & $4.16$\\ \hline
+				Spring 2016 & 8 & $2.41$\\ \hline
+\end{tabular}
+	}
+\end{columns}
+\end{frame}

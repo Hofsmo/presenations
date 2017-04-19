@@ -182,3 +182,5 @@ TSWLatexianTemp*
 # Vim stuff
 *.swp
 *.swo
+
+*.un~
