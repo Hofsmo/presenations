@@ -1,20 +1,18 @@
-\section[Frequency quality]{Background}
+\section[Frequency quality]{Background PhD project}
 \begin{frame}[fragile]
 	\frametitle{Frequency quality}
 	\begin{columns}[c]
 		\column{0.5\textwidth}
 		\begin{itemize}
 				\item<1-> There are concerns about the frequency quality in the Nordic countries
-				\item<2-> To prevent large deviations in frequency generators participate in frequency containment control (FCR)
-				\item<3-> FCR is sometimes referred to as primary control
+				\item<2-> To prevent large deviations in frequency generators participate in frequency containment control (FCC)
+				\item<3-> FCC is sometimes referred to as primary control
 				\item<4-> Generators of a certain size have to contribute to this control
-				\item<5-> It is of interest to monitor the generators' FCR performance with respect to both gain and bandwidth
+				\item<5-> FCC greatly influences the frequency quality
 		\end{itemize}
 		\column{0.5\textwidth}
 				\begin{figure}
-					\includegraphics<1>[width=\textwidth]{./pictures/frequency.pdf}
-					\includegraphics<2,3,4>[width=\textwidth]{./pictures/speedDroop.tikz}
-					\includegraphics<5>[width=\textwidth]{./pictures/bodeSimple.tikz}
+					\includegraphics<1,2,3,4,5>[width=\textwidth]{./pictures/frequency.pdf}
 			\end{figure}
 	\end{columns}
 \end{frame}
@@ -22,35 +20,43 @@
 		\frametitle{Hydro turbine governors}
 				\begin{itemize}
 						\item Typically implemented as a PID controller
-						
 				\end{itemize}
-				\begin{figure}
 					\includegraphics{./pictures/PID.tikz}
-			\end{figure}
 \begin{equation}
 		H = -K_p\frac{1+sT_D}{1+sT_f}\cdot\frac{1+sT_i}{\rho K_p+sT_i}
 		\label{eq:H}
 \end{equation}
-From~\eqref{eq:H} one can see that the system's poles will be placed at:
-\begin{equation}
-	p_1=-\frac{1}{T_f},~p_2=-\frac{\rho K_p}{T_i}
-	\label{eq:p}
-\end{equation}
+%From~\eqref{eq:H} one can see that the system's poles will be placed at:
+%\begin{equation}
+	%p_1=-\frac{1}{T_f},~p_2=-\frac{\rho K_p}{T_i}
+	%\label{eq:p}
+%\end{equation}
 \end{frame}
-\begin{frame}
-		\frametitle{Research questions}
-		\begin{itemize}
-				\item<1-> Can identification of turbine governors be used to analyze the frequency quality?
-				\item<2-> Can the identification be done using ambient power system data?
-				\item<3-> Is vector fitting a suitable method for doing the identification?
-		\end{itemize}
+\begin{frame}[fragile]
+		\frametitle{Hydro turbine governors}
+		\begin{columns}[c]
+			\column{0.5\textwidth}
+				\begin{itemize}
+						\item By identifying a model of the governor we can:
+							\begin{itemize}
+								\item<1-> Say something about its static performance
+								\item<2-> Say something about its dynamic performance
+							\end{itemize}
+				\end{itemize}
+			\column{0.5\textwidth}
+				\begin{figure}
+					\includegraphics<1>[width=\textwidth]{./pictures/speedDroop.tikz}
+					\includegraphics<2>[width=\textwidth]{./pictures/bodeSimple.tikz}
+				\end{figure}
+			\end{columns}
 \end{frame}
 \begin{frame}
 		\frametitle{Previous work}
 		\begin{itemize}
 				\item The ARX\footnote{Autoregressive exogenous} model structure was used on parts of the same dataset as used in this study in~\cite{dinh_thuc_duong_estimation_2016}
 				\item The authors of~\cite{hatziargyriou_identification_2001} use constrained optimization on disturbance data from the Crete power system.
-				\item and the authors of~\cite{aghamolki_identification_2015} apply an unscented Kalman filter to the measurements from a trip event in the Midcontinent Independent System.
+				\item The authors  of~\cite{aghamolki_identification_2015} apply an unscented Kalman filter to the measurements from a trip event in the Midcontinent Independent System.
+				\item Field measurements for a more detailed identification is used in~\cite{saarinen_field_2015}
 				\item  Other studies using only simulation data also exist.
 		\end{itemize}
 \end{frame}
