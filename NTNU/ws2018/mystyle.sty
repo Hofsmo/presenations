@@ -1,0 +1,42 @@
+\setbeamertemplate{itemize items}[circle] 
+
+% Bold fonts
+\usepackage{bm}
+
+% Dashed line in matrix
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{array}
+\usepackage{arydshln}
+
+\usepackage{tikz}
+\usepackage{tikzscale}
+
+\usetikzlibrary{arrows, intersections, calc}
+%\tikzexternalize[prefix=tikz/]
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+% Declare tikz shapes
+\tikzset{generator/.style={
+circle,
+draw,
+append after command={
+    \pgfextra{
+    \draw
+      ($(\tikzlastnode.center)!0.5!(\tikzlastnode.west)$)
+       arc[start angle=180,end angle=0,radius=0.425ex] 
+      (\tikzlastnode.center)
+       arc[start angle=180,end angle=360,radius=0.425ex]
+      ($(\tikzlastnode.center)!0.5!(\tikzlastnode.east)$) 
+    ;
+    }
+  },
+  scale=1.5,
+ }
+}

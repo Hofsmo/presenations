@@ -1,0 +1,94 @@
+\section{Test system for identification}
+\begin{frame}{Introduction of test system}
+		\begin{figure}[t]
+		\includegraphics{./pictures/sld.tikz}
+	\end{figure}
+	\begin{itemize}
+			\item \emph{\color{red}We need to model relation between $P_{e1}[n]$ and $\Delta \omega_1[n]$.}
+		\item We therefore introduce a small test system consisting of:
+			\begin{itemize}
+				\item The plant we want to identify.
+				\item an aggregated plant,
+				\item an aggregated load and,
+				\item the line reactances.
+			\end{itemize}
+		\end{itemize}
+\end{frame}
+\begin{frame}{\secname}
+	\framesubtitle{Model of the load}
+	\begin{itemize}
+		\item We assume the following model for the load
+			\begin{equation}
+				\Delta P_{load} = \Delta P_f + \Delta P_s
+			\end{equation}
+		where:
+		\begin{itemize}
+			\item $\Delta P_f$: is frequency dependent part of the load
+			\item $\Delta P_s$: is the stochastic part of the load assumed to be filtered white noise.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+\begin{frame}{\secname}
+	\framesubtitle{Connecting the elements together}
+	\begin{figure}[t]
+		\includegraphics{./pictures/DC.tikz}
+	\end{figure}
+	\begin{itemize}
+		\item To connect the elements together we will use the dc power flow.
+		\begin{itemize}
+			\item It is simple.
+			\item Strong coupling between active power and frequency.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+\begin{frame}{\secname}
+	\framesubtitle{DC power flow}
+	\begin{itemize}
+		\item We start by organizing the DC power flow in terms of loads and generators
+		\begin{equation}
+			\begin{bmatrix}
+				\boldsymbol{\Delta P}_{e} \\ \boldsymbol{\Delta P}_{l}
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+				\boldsymbol{B}_{11} & \boldsymbol{B}_{12} \\
+				\boldsymbol{B}_{21} & \boldsymbol{B}_{22}
+			\end{bmatrix}
+			\begin{bmatrix}
+				\boldsymbol{\Delta \delta}_e \\
+				\boldsymbol{\Delta \delta}_l
+			\end{bmatrix}
+		\end{equation}
+		\item The angle of the non generator buses can now be calculated as:
+			\begin{equation}\label{eq:theta_l}
+				\boldsymbol{\Delta\delta}_l = \boldsymbol{B}_{22}^{-1}(\Delta\boldsymbol{P}_l - \boldsymbol{B}_{21}\boldsymbol{\Delta\delta}_e)
+			\end{equation}
+		\item The power injections at the generator buses are:
+			\begin{equation}\label{eq:Pg}
+				\boldsymbol{\Delta P}_e = \boldsymbol{B}_{11} \boldsymbol{\Delta\delta}_e + \boldsymbol{B}_{12}\boldsymbol{\Delta\delta}_l
+			\end{equation}
+		\item Finally, we substitute~\eqref{eq:theta_l} into~\eqref{eq:Pg} and rearrange to obtain.
+\begin{equation}\label{eq:DC}
+	\boldsymbol{\Delta P}_e = 
+	\begin{bmatrix}
+			\boldsymbol{B}_{11}-\boldsymbol{B}_{12}\boldsymbol{B}_{22}^{-1}\boldsymbol{B}_{21} & \boldsymbol{B}_{12}\boldsymbol{B}^{-1}_{22}
+	\end{bmatrix}
+	\begin{bmatrix}
+		\boldsymbol{\Delta\delta}_e \\
+		\boldsymbol{\Delta P}_l
+	\end{bmatrix}
+\end{equation}
+	\end{itemize}
+\end{frame}
+\begin{frame}{\secname}
+	\framesubtitle{Putting it all together}
+	\begin{figure}
+		\includegraphics{./pictures/block.tikz}
+	\end{figure}
+\end{frame}
+\begin{frame}{\secname}
+	\framesubtitle{System frequency response}
+	\begin{figure}[t]
+			\includegraphics[width=\textwidth]{./pictures/frequency_comp.tikz}
+	\end{figure}
+\end{frame}

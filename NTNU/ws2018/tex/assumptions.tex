@@ -1,0 +1,112 @@
+\section{Assumption that $\Delta \omega_1[n] \approx \Delta \omega_3[n]$}
+\begin{frame}{\secname}
+	\begin{itemize}
+		\item In reality $\Delta \omega_1[n] \approx \Delta \omega_3[n]$ is only valid for a certain frequency range.
+		\item To show this we will develop an expression for $\omega_{\epsilon}[n] = \omega_1[n]-\omega[n]$.
+	\end{itemize}
+\end{frame}
+\begin{frame}{\secname}
+	\framesubtitle{The angular velocity at bus $3$}
+	\begin{itemize}
+		\item We need an expression for the angular velocity at bus $3$.
+		\item The two standard options would be:
+			\begin{itemize}
+				\item The time derivative of the voltage angle at the bus.
+				\item The centre of inertia equation.
+			\end{itemize}
+		\item We will instead use the frequency divider(FD) formula (Milano 2017).
+	\end{itemize}
+\end{frame}
+\begin{frame}{\secname}
+	\framesubtitle{Derivation of the FD formula}
+	\begin{itemize}
+		\item Start by the DC power flow assumption assuming the load changes to be negligible.
+		\begin{equation}
+			\begin{bmatrix}
+				\boldsymbol{\Delta P}_{e} \\ \boldsymbol{0}
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+				\boldsymbol{B}_{11} & \boldsymbol{B}_{12} \\
+				\boldsymbol{B}_{21} & \boldsymbol{B}_{22}
+			\end{bmatrix}
+			\begin{bmatrix}
+				\boldsymbol{\Delta \delta}_e \\
+				\boldsymbol{\Delta \delta}_l
+			\end{bmatrix}
+		\end{equation}
+		\item Then we rearrange
+		\begin{equation}\label{eq:theta_l}
+			\boldsymbol{\Delta \delta}_l = -\boldsymbol{B}_{22}^{-1}\boldsymbol{B}_{21}\boldsymbol{\Delta \delta}_e
+		\end{equation}
+		\item We now take the time derivative to obtain.
+		\begin{equation}\label{eq:theta_l}
+			\boldsymbol{\Delta \omega}_l = -\boldsymbol{B}_{22}^{-1}\boldsymbol{B}_{21}\boldsymbol{\Delta \omega}_e
+		\end{equation}
+	\end{itemize}
+\end{frame}
+\begin{frame}{\secname}
+	\framesubtitle{FD example}
+\begin{equation}
+		\boldsymbol{B}=
+		\left[
+		\begin{array}{cc:ccc}
+				b'_{d1} & 0 & -b'_{d1} & 0 & 0  \\
+				0 & b'_{d2} & 0 & -b'_{d2} & 0 \\
+			\hdashline
+			-b'_{d1} & 0 & b'_{d1}+b_1 & 0 & -b_1 \\
+			0 & -b'_{d2} & 0 & b'_{d2}+b_2 & -b_2 \\
+			0 & 0 & -b_{1} & -b_{2} & b_{1}+b_2 \\
+		\end{array}
+		\right]
+\end{equation}
+
+\begin{equation}
+		\Delta \omega_3 = \frac{(b_1b_{d2}+b_1b_2+b_2b_{d2})b_{d1}}{|\boldsymbol{B}_{22}|}\Delta\omega_1 +\frac{b_1b_2b_{d2}}{|\boldsymbol{B}_{22}|}\Delta\omega_2
+\end{equation}
+
+\begin{equation}
+		\Delta \omega_5 = \frac{b_1b'_{d1}(b'_{d2}+b_2)}{|\boldsymbol{B}_{22}|}\Delta \omega_1 + \frac{b_2b'_{d2}(b'_{d1}+b_1)}{|\boldsymbol{B}_{22}|}\Delta \omega_2
+\end{equation}
+
+\begin{equation}
+		\Delta \omega_{COI} = \frac{1}{\mathcal{H}_1+\mathcal{H}_2}(\mathcal{H}_1\Delta \omega_1 + \mathcal{H}_2\Delta \omega_2)
+\end{equation}
+
+\end{frame}
+
+\begin{frame}{\secname}
+	\framesubtitle{FD example}
+	\begin{figure}
+		\includegraphics[width=\textwidth]{./pictures/frequencies.tikz}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{\secname}
+	\framesubtitle{Difference between angular speeds at bus $1$ and $3$}
+	\begin{itemize}
+		\item We can write the difference as
+		\begin{equation}\label{eq:fdelta}
+			\omega_{\Delta}(s) = \frac{L_1(s)(1-K_{f1})-K_{f2}L_2(s)}{M(s)}\Delta P_l(s)
+		\end{equation}
+		\item $\omega_{\Delta}(s)$ is zero under two different conditions.
+		\begin{enumerate}
+			\item $b_1>>b_2$
+			\item $L_1(s)=L_2(s)$
+		\end{enumerate}
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\framesubtitle{For which dynamics are $\omega(s)_{\Delta}$ zero}
+	\begin{figure}
+		\includegraphics[width=\textwidth]{./pictures/L1_L2.tikz}
+	\end{figure}
+\end{frame}
+\begin{frame}
+	\framesubtitle{For which dynamics are $\omega(s)_{\Delta}$ zero}
+	\begin{figure}
+		\includegraphics[width=\textwidth]{./pictures/identified_normal.tikz}
+	\end{figure}
+\end{frame}
+		
+		
