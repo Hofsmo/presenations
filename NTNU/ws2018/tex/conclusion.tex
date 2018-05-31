@@ -1,16 +1,23 @@
-\section{Conclusions and further work}
+\section{Future and ongoing work}
 \begin{frame}{\secname}
-	\begin{itemize}
-		\item Conclusions:
+		\framesubtitle{Identification of turbine dynamics at the plant}
+		\begin{figure}
+				\includegraphics[width=\textwidth]{./pictures/ident.jpg}
+		\end{figure}
 		\begin{itemize}
-			\item It is indeed possible to identify the turbine dynamics(closed loop with electromechanical dynamics) using PMU measurements.
-			\item However, only low the low frequency dynamics
+			\item Which transfer functions can we consistently identify without adding external excitation?
+			\item What do we gain in terms of having access to a PMU?
+			\item How do we best design an external excitation signal?
 		\end{itemize}
-		\item Future work:
-		\begin{itemize}
-			\item Look into how to best do the identification of turbine dynamics.
-			\item Look into control solutions using identified models.
-		\end{itemize}
-	\end{itemize}
 \end{frame}
 
+\begin{frame}{\secname}
+		\framesubtitle{Using the identified models for control}
+		\begin{figure}
+				\includegraphics[width=\textwidth]{./pictures/control.jpg}
+		\end{figure}
+		\begin{itemize}
+			\item Use the identified models to find optimal PID parameters.
+			\item Use PMU and identified models to design a feedforward controller.
+		\end{itemize}
+\end{frame}

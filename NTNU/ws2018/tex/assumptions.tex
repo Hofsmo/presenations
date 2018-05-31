@@ -2,12 +2,6 @@
 \begin{frame}{\secname}
 	\begin{itemize}
 		\item In reality $\Delta \omega_1[n] \approx \Delta \omega_3[n]$ is only valid for a certain frequency range.
-		\item To show this we will develop an expression for $\omega_{\epsilon}[n] = \omega_1[n]-\omega[n]$.
-	\end{itemize}
-\end{frame}
-\begin{frame}{\secname}
-	\framesubtitle{The angular velocity at bus $3$}
-	\begin{itemize}
 		\item We need an expression for the angular velocity at bus $3$.
 		\item The two standard options would be:
 			\begin{itemize}
@@ -78,35 +72,13 @@
 \begin{frame}{\secname}
 	\framesubtitle{FD example}
 	\begin{figure}
-		\includegraphics[width=\textwidth]{./pictures/frequencies.tikz}
+		\includegraphics[width=0.8\textwidth]{./pictures/frequencies.tikz}
 	\end{figure}
 \end{frame}
-
 \begin{frame}{\secname}
-	\framesubtitle{Difference between angular speeds at bus $1$ and $3$}
+	\framesubtitle{Assumptions further work}
 	\begin{itemize}
-		\item We can write the difference as
-		\begin{equation}\label{eq:fdelta}
-			\omega_{\Delta}(s) = \frac{L_1(s)(1-K_{f1})-K_{f2}L_2(s)}{M(s)}\Delta P_l(s)
-		\end{equation}
-		\item $\omega_{\Delta}(s)$ is zero under two different conditions.
-		\begin{enumerate}
-			\item $b_1>>b_2$
-			\item $L_1(s)=L_2(s)$
-		\end{enumerate}
+		\item<1-> Continue with the dc power flow assumption,
+		\item<2-> however, remove the FD assumption of $\Delta P_l=0$.
 	\end{itemize}
 \end{frame}
-\begin{frame}
-	\framesubtitle{For which dynamics are $\omega(s)_{\Delta}$ zero}
-	\begin{figure}
-		\includegraphics[width=\textwidth]{./pictures/L1_L2.tikz}
-	\end{figure}
-\end{frame}
-\begin{frame}
-	\framesubtitle{For which dynamics are $\omega(s)_{\Delta}$ zero}
-	\begin{figure}
-		\includegraphics[width=\textwidth]{./pictures/identified_normal.tikz}
-	\end{figure}
-\end{frame}
-		
-		
