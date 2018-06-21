@@ -1,13 +1,12 @@
 \section{Previous work}
-\begin{frame}{\secname}
+\begin{frame}
+		\frametitle{Previous articles}
 	\begin{columns}
 		\begin{column}{0.5\textwidth}
 			\begin{itemize}
 				\item<1-> Governor dynamics were identified using the ARX model structure
-				\item<2->
-							Governor dynamics were identified using time domain vector fitting
-				\item<3-> However, no theoretical validation was made.
-				\item<4-> The theoretical validation was performed in this work.
+				\item<2-> Governor dynamics were identified using time domain vector fitting
+				\item<3-> There are also other papers in the literature using other methods for online identification, however, mostly relying on data from disturbance recordings.
 			\end{itemize}
 		\end{column}
 		\begin{column}{0.5\textwidth}
@@ -18,4 +17,23 @@
 		\end{column}
 	\end{columns}
 \end{frame}
-
+\begin{frame}
+		\frametitle{Question leading to this specific work}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\item<1-> Why do we get different results?
+				\item<2-> The signals we use are corrupted by noise.
+				\item<3-> Using system identification techniques we can estimate the variance of the covariance matrix of the parameter vector
+				\item<4> However, first we have to prove that we will get consistent results.
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+				\includegraphics<1>[width=0.7\textwidth]{./pictures/bode.tikz}
+				\includegraphics<2>{./pictures/v_block.tikz}
+				\begin{equation*}\onslide<3>
+						a+b
+				\end{equation*}
+		\end{column}
+	\end{columns}
+\end{frame}

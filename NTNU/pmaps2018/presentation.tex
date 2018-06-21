@@ -13,11 +13,17 @@
 \usepackage{mystyle}
 
 %\date{} % To have an empty date
+\AtBeginSection[]
+{
+	\begin{frame}
+		\frametitle{Outline}
+		\tableofcontents[currentsection]
+	\end{frame}
+}
 
 \begin{document}
 
 \input{./tex/title.tex}
-\input{./tex/outline.tex}
 \input{./tex/background.tex}
 \input{./tex/previous.tex}
 \input{./tex/sys_ident.tex}
