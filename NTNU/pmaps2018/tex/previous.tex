@@ -18,21 +18,24 @@
 	\end{columns}
 \end{frame}
 \begin{frame}
-		\frametitle{Question leading to this specific work}
+		\frametitle{Question leading to this work}
 	\begin{columns}
 		\begin{column}{0.5\textwidth}
 			\begin{itemize}
 				\item<1-> Why do we get different results?
 				\item<2-> The signals we use are corrupted by noise.
-				\item<3-> Using system identification techniques we can estimate the variance of the covariance matrix of the parameter vector
-				\item<4> However, first we have to prove that we will get consistent results.
+				\item<3-> From system identification we have that the error will be asymptotic normally distributed
+				\item<4-> However, first we need to prove the identifiability of the system
 			\end{itemize}
 		\end{column}
 		\begin{column}{0.5\textwidth}
-				\includegraphics<1>[width=0.7\textwidth]{./pictures/bode.tikz}
-				\includegraphics<2>{./pictures/v_block.tikz}
+				\begin{figure}
+					\includegraphics<1>[width=0.7\textwidth]{./pictures/bode.tikz}
+					\includegraphics<2>{./pictures/v_block.tikz}
+					\includegraphics<4>{./pictures/identifiability.tikz}
+				\end{figure}
 				\begin{equation*}\onslide<3>
-						a+b
+						\sqrt{N}(\hat{\theta}_n-\theta^*) \in AsN(0,P_{\theta})
 				\end{equation*}
 		\end{column}
 	\end{columns}

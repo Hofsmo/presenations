@@ -3,13 +3,17 @@
 \usepackage{tikz}
 \usepackage{tikzscale}
 
-\usetikzlibrary{arrows, calc}
+\usetikzlibrary{arrows, calc,intersections,positioning}
 %\tikzexternalize[prefix=tikz/]
+\usepackage{tkz-euclide}
+\usetkzobj{all}
 
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.15}
 
 \DeclareMathOperator*{\argmin}{arg\,min}
+
+\usepackage{bm}
 
 % Declare tikz shapes
 \tikzset{generator/.style={

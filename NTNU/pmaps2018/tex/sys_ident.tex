@@ -1,4 +1,4 @@
-\section{Theoretical validation}
+\section{Validation of the approach}
 \begin{frame}
 	\frametitle{System identification basic}
 	\begin{columns}
@@ -23,19 +23,22 @@
 	\end{columns}
 \end{frame}
 \begin{frame}
-	\framesubtitle{Consistency}
-	\begin{itemize}
-	\item A consistent estimate means that the true parameter vector $\theta_0$ is the unique solution to the asymptotic prediction error criterion.
-\begin{equation}\label{eq:theta_1}
-		\theta^*= \argmin_{\theta} \bar{E}\epsilon^2(n,\theta)
-\end{equation}
-with
-\begin{equation}
-		\bar{E}\epsilon^2(n,\theta) = \lim_{N\to\infty}\frac{1}{N}\sum_{t=1}^N E\epsilon^2(n,\theta)
-\end{equation}
-and
-\begin{equation}\label{eq:epsi}
-		\epsilon(n,\theta)=H_1^{-1}(z,\theta)(y[n]-G_1(z,\theta)u[n])
-\end{equation}
-\end{itemize}
+	\frametitle{Modeling used for the validation}
+	\begin{columns}
+		\begin{column}{0.3\textwidth}
+			\begin{itemize}[<+->]
+				\item The system we are identifying
+				\item We use a small power system
+				\item We use a dc power flow 
+				\item This results in the following block diagram
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.7\textwidth}
+				\includegraphics<1>{./pictures/sys.tikz}
+				\includegraphics<2>[width=0.8\textwidth]{./pictures/sld.tikz}
+				\includegraphics<3>{./pictures/DC.tikz}
+				\includegraphics<4>{./pictures/block.tikz}
+		\end{column}
+	\end{columns}
 \end{frame}
+
