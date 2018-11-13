@@ -1,0 +1,34 @@
+\documentclass[screen, aspectratio=43]{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% Use the NTNU-temaet for beamer 
+\usetheme[style=ntnu,language=en]{ntnu2017}
+\setbeamertemplate{footline}[frame number]
+
+\usepackage[english]{babel}
+\usepackage{mystyle}
+
+%\date{} % To have an empty date
+\AtBeginSection[]
+{
+	\begin{frame}
+		\frametitle{Outline}
+		\tableofcontents[currentsection]
+	\end{frame}
+}
+
+\begin{document}
+
+\input{./tex/title.tex}
+\input{./tex/bio.tex}
+\input{./tex/background.tex}
+\input{./tex/previous.tex}
+\input{./tex/sys_ident.tex}
+\input{./tex/results.tex}
+\input{./tex/conclusion.tex}
+% Alternatively, special title page command to get a different background
+% \ntnutitlepage
+
+
+\end{document}
