@@ -86,7 +86,7 @@ N = T/Ts+1;
 
 dW = sqrt(Ts)*randn(N,1);
 W = cumsum(dW);   
-el = 1e-3;
+el = 1e-4;
 vl = timeseries(el*W,t);
 
 e1 = el*1e-4;
@@ -95,7 +95,7 @@ v1 = timeseries(e1.*randn(N, 1),t);
 e2 = el*1e-4;
 v2 = timeseries(e2*randn(N, 1),t);
 
-f_excitation = timeseries(el*2*randn(N,1),t);
+f_excitation = timeseries(el*randn(N,1),t);
 
 extra_excitation=0;
 freq_control=0;
