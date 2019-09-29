@@ -1,0 +1,36 @@
+\documentclass[screen, aspectratio=43]{beamer}
+\usetheme[style=ntnu,language=en]{ntnu2017}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[english]{babel}
+\usepackage{mystyle}
+
+%\date{} % To have an empty date
+\AtBeginSection[]
+{
+	\begin{frame}
+		\frametitle{Outline}
+		\tableofcontents[currentsection]
+	\end{frame}
+}
+
+\begin{document}
+
+\input{./tex/title.tex}
+\thispagestyle{empty}
+\makeatletter
+\def\cleartextposbox{\global\setbox\TP@holdbox\vbox{}}
+\makeatother
+\null\newpage\cleartextposbox
+\input{./tex/background.tex}
+\input{./tex/paper_1.tex}
+%\input{./tex/idea.tex}
+%\input{./tex/market.tex}
+%\input{./tex/project.tex}
+%\input{./tex/conclusion.tex}
+% Alternatively, special title page command to get a different background
+% \ntnutitlepage
+
+
+\end{document}

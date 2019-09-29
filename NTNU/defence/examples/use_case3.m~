@@ -1,0 +1,12 @@
+init_transfers_knut;
+ksp = 0;
+
+model_name = 'test_system_2016_a';
+        simout = sim(model_name);
+           ratio =10;
+    Ts = 0.02;
+    data = prepare_case(e, [rr u],ratio, -1, Ts);
+    model = arx(data, [20, [20,20],[0 0]]);
+    [S_1, Sp_1] = bode(model(1), w);
+    [G1_1, G1p_1] = bode(model(2), w);
+    
