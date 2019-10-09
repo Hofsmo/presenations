@@ -94,18 +94,51 @@
 \end{frame}
 \begin{frame}
 	\frametitle{Estimated droop and bandwidth}
-	\begin{columns}[c]
-	\column{0.6\textwidth}
-		\includegraphics[width=\textwidth]{./pictures/bode.tikz}
+	\begin{figure}
+		\includegraphics[width=0.6\textwidth]{./pictures/bode.tikz}
+\end{figure}
 
-\column{0.4\textwidth}
 		\begin{tabular}{|c|c|c|}
 				\hline
 				Dataset & Droop[\%] & Bandwidth[mHz] \\ \hline
 				Fall 2015 & 10 & $4.16$\\ \hline
 				Spring 2016 & 8 & $2.41$\\ \hline
 \end{tabular}
-\end{columns}
 \end{frame}
+\begin{frame}
+		\frametitle{Shortcoming with the paper}
+		\begin{columns}
+				\begin{column}{0.4\textwidth}
+						\begin{itemize}
+								\item No theoretical validation of the results.
+								\item No simulation validation of the results.
+						\end{itemize}
+				\end{column}
+				\begin{column}{0.6\textwidth}
+						\begin{figure}
+								\includegraphics{./pictures/sys.tikz}
+						\end{figure}
+				\end{column}
+		\end{columns}
+\end{frame}
+\begin{frame}
+		\frametitle{Main contributions to the research questions}
+		\begin{columns}
+				\begin{column}{0.4\textwidth}
+						\begin{itemize}
+								\item<1-> Promising results for 19 datasets.
+								\item<2-> Developed code for interfacing with the PMU data.
+						\end{itemize}
+				\end{column}
+				\begin{column}{0.6\textwidth}
+						\begin{figure}
+								\includegraphics<1>{./pictures/genTrafo.tikz}
+						\end{figure}
+				\end{column}
+		\end{columns}
+\end{frame}
+		
+		
+
 		
 
