@@ -4,39 +4,39 @@
 	\begin{columns}
 		\begin{column}{0.4\textwidth}
 			\begin{itemize}
-					\item<1->  Idea from\footnotemark[1] can the power plant dynamics be identified using PMUs
-					\item<2-> Uses the same input and output measurements as in the requirements:
-					\begin{itemize}
-							\item Input: Power system frequency.
-							\item Output: Electric power.
+				\item<1->  Idea from\footnotemark[1] can the power plant dynamics be identified using PMUs
+				\item<2-> Uses the same input and output measurements as in the requirements:
+				\begin{itemize}
+					\item Input: Power system frequency.
+					\item Output: Electric power.
 					\end{itemize}
 			\end{itemize}
-	\end{column}
-	\begin{column}{0.6\textwidth}
+		\end{column}
+		\begin{column}{0.6\textwidth}
 			\begin{figure}
-					\includegraphics<1>{./pictures/genTrafo.tikz}
-					\includegraphics<2>{./pictures/block.tikz}
+				\includegraphics<1>{./pictures/genTrafo.tikz}
+				\includegraphics<2>{./pictures/block.tikz}
 			\end{figure}
-	\end{column}
+		\end{column}
 	\end{columns}
 	\footnotetext[1]{\fullcite{dinh_thuc_duong_estimation_2016}}
 \end{frame}
 \begin{frame}
 	\frametitle{Methodology}
 	\begin{columns}
-			\begin{column}{0.4\textwidth}
+		\begin{column}{0.4\textwidth}
 			\begin{itemize}
-					\item Collect several datasets from PMUs.
-					\item Calculate power and frequency from the measurements.
-					\item Identify dynamics using vector fitting.
-					\item Compare models.
+				\item Collect several datasets from PMUs.
+				\item Calculate power and frequency from the measurements.
+				\item Identify dynamics using vector fitting.
+				\item Compare models.
 			\end{itemize}
-			\end{column}
-			\begin{column}{0.6\textwidth}
-					\begin{figure}
-					\includegraphics{./pictures/genTrafo.tikz}
-					\end{figure}
-			\end{column}
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics{./pictures/genTrafo.tikz}
+			\end{figure}
+		\end{column}
 	\end{columns}
 \end{frame}
 \begin{frame}
@@ -52,93 +52,83 @@
 		\begin{column}{0.6\textwidth}
 			\begin{itemize}
 				\item[]<1->
-				\begin{equation}
-					Y(s) = H(s)\cdot U(s)
-				\end{equation}
-				\item[]<2->
-				\begin{equation}
-					H(s) = d + \sum^{n_p}_{i=1}\frac{r_i}{s-p_i}
-				\end{equation}
-				\item[]<3->
-				\begin{equation}\label{eq:VFTD}
-    			y(t) \approx \tilde{d} x(t) + \sum^{n_p}_{i=1} \tilde{r}_ix_i-\sum^{n_p}_{i=1}\tilde{k}_iy_i
-					\end{equation}
 					\begin{equation}
-    \label{eq:XVFWave}
-    x_i = \int^t_0 e^{\tilde{p}_i(t-\tau)}x_i(\tau)d\tau
-\end{equation}
-\begin{equation}
-    \label{eq:YVFWave}
-    y_i = \int^t_0 e^{\tilde{p}_{i}(t-\tau)}y_i(\tau)d\tau
-\end{equation}
-			\end{itemize}
-	\end{column}
-	\end{columns}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{Vector fitting basics ctd.}
-		\begin{itemize}
-				\item Find $\tilde{d}$, $\tilde{r}_i$ and $\tilde{k}_i$ to minimize:
-				\end{itemize}
-				\begin{equation}
-						y(t) - (\tilde{d} x(t) + \sum^{n_p}_{i=1} \tilde{r}_ix_i-\sum^{n_p}_{i=1}\tilde{k}_iy_i)
+						Y(s) = H(s)\cdot U(s)
 					\end{equation}
-
+				\item[]<2->
+					\begin{equation}
+						H(s) = d + \sum^{n_p}_{i=1}\frac{r_i}{s-p_i}
+					\end{equation}
+				\item[]<3->
+					\begin{equation}\label{eq:VFTD}
+   			 			y(t) \approx \tilde{d} x(t) + \sum^{n_p}_{i=1} \tilde{r}_ix_i-\sum^{n_p}_{i=1}\tilde{k}_iy_i
+					\end{equation}
+					\begin{equation}\label{eq:XVFWave}
+    					x_i = \int^t_0 e^{\tilde{p}_i(t-\tau)}x_i(\tau)d\tau
+					\end{equation}
+					\begin{equation}\label{eq:YVFWave}
+    					y_i = \int^t_0 e^{\tilde{p}_{i}(t-\tau)}y_i(\tau)d\tau
+					\end{equation}
+			\end{itemize}
+		\end{column}
+	\end{columns}
 \end{frame}
-		\begin{frame}[fragile]
+\begin{frame}
+	\frametitle{Vector fitting basics ctd.}
+	\begin{itemize}
+		\item Find $\tilde{d}$, $\tilde{r}_i$ and $\tilde{k}_i$ to minimize:
+	\end{itemize}
+	\begin{equation}
+		y(t) - (\tilde{d} x(t) + \sum^{n_p}_{i=1} \tilde{r}_ix_i-\sum^{n_p}_{i=1}\tilde{k}_iy_i)
+	\end{equation}
+\end{frame}
+\begin{frame}[fragile]
 	\frametitle{Cross validation using distant data sets}
-		\includegraphics<1>[width=0.45\textwidth]{./pictures/frequencies.tikz}
-		\includegraphics<1>[width=0.45\textwidth]{./pictures/powers.tikz}
-		\includegraphics<2>[width=\textwidth]{./pictures/cross_val}
+	\includegraphics<1>[width=0.45\textwidth]{./pictures/frequencies.tikz}
+	\includegraphics<1>[width=0.45\textwidth]{./pictures/powers.tikz}
+	\includegraphics<2>[width=\textwidth]{./pictures/cross_val}
 \end{frame}
 \begin{frame}
 	\frametitle{Estimated droop and bandwidth}
 	\begin{figure}
 		\includegraphics[width=0.6\textwidth]{./pictures/bode.tikz}
-\end{figure}
-
-		\begin{tabular}{|c|c|c|}
-				\hline
-				Dataset & Droop[\%] & Bandwidth[mHz] \\ \hline
-				Fall 2015 & 10 & $4.16$\\ \hline
-				Spring 2016 & 8 & $2.41$\\ \hline
-\end{tabular}
+	\end{figure}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		Dataset & Droop[\%] & Bandwidth[mHz] \\ \hline
+		Fall 2015 & 10 & $4.16$\\ \hline
+		Spring 2016 & 8 & $2.41$\\ \hline
+	\end{tabular}
 \end{frame}
 \begin{frame}
-		\frametitle{Shortcoming with the paper}
-		\begin{columns}
-				\begin{column}{0.4\textwidth}
-						\begin{itemize}
-								\item No theoretical validation of the results.
-								\item No simulation validation of the results.
-						\end{itemize}
-				\end{column}
-				\begin{column}{0.6\textwidth}
-						\begin{figure}
-								\includegraphics{./pictures/sys.tikz}
-						\end{figure}
-				\end{column}
-		\end{columns}
+	\frametitle{Shortcoming with the paper}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+			\begin{itemize}
+				\item No theoretical validation of the results.
+				\item No simulation validation of the results.
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics{./pictures/sys.tikz}
+			\end{figure}
+		\end{column}
+	\end{columns}
 \end{frame}
 \begin{frame}
-		\frametitle{Main contributions to the research questions}
-		\begin{columns}
-				\begin{column}{0.4\textwidth}
-						\begin{itemize}
-								\item<1-> Promising results for 19 datasets.
-								\item<2-> Developed code for interfacing with the PMU data.
-						\end{itemize}
-				\end{column}
-				\begin{column}{0.6\textwidth}
-						\begin{figure}
-								\includegraphics<1>{./pictures/genTrafo.tikz}
-						\end{figure}
-				\end{column}
-		\end{columns}
+	\frametitle{Main contributions to the research questions}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+			\begin{itemize}
+				\item<1-> Promising results for 19 datasets.
+				\item<2-> Developed code for interfacing with the PMU data.
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics<1>{./pictures/genTrafo.tikz}
+			\end{figure}
+		\end{column}
+	\end{columns}
 \end{frame}
-		
-		
-
-		
-
