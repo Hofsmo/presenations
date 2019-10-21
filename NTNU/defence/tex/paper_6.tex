@@ -1,4 +1,69 @@
 \section{Checking the requirements using measurements from the control system of a hydro power plant Paper VI}
 \begin{frame}
 	\frametitle{Motivation}
+	\begin{itemize}
+		\item How to best identify hydro power plant dynamics given access to control system data.
+	\end{itemize}
 \end{frame}
+\begin{frame}
+	\frametitle{Systems to be identified}
+	\begin{equation}
+		e(s) = G_1(s)\Delta P_{e1}(s)+ S(s)r(s)
+	\end{equation}
+	\begin{equation}
+		\Delta \omega_1(s) = G_s(s)G_t(s)G_J(s)c(s)- G_J(s)\Delta P_{e1}(s)
+	\end{equation}
+	\begin{equation}
+			G_p(s) = \frac{G_c(s)G_s(s)G_t(s)G_J(s)}{G_J(s)(1+\rho G_c(s)G_s(s))}
+	\end{equation}
+	\begin{itemize}
+		\item<2-> Two approaches.
+		\item<3-> Extra excitation is needed.
+		\item<4-> PMU approach is a special case without extra excitation.
+	\end{itemize}
+		\includegraphics<1>{./pictures/sys_extended.tikz}
+\end{frame}
+\begin{frame}
+	\frametitle{Identifiability}
+	\begin{itemize}
+		\item<1-> The systems can be identified
+		\item<2-> However, there is a lack of delay
+		\item<3-> This is no problem if $v(s)<<v_l(s)$.
+	\end{itemize}
+		\includegraphics<1>{./pictures/sys_extended.tikz}
+		\includegraphics<2->{./pictures/sys_extended_red.tikz}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Identifying $G_p(s)$ and $G_J(s)$}
+	\begin{figure}
+		\includegraphics[width=\textwidth]{./Validation/Plots/GP_GJ.tikz}
+		\caption{The mean value of $|G_p(e^{j\Omega},\hat{\theta}_N)|$ and $|G_J(e^{j\Omega},\hat{\theta}_N)|$ calculated from the MCS\@. The solid lines are the analytical calculated versions and the dashed loosely dashed dotted and loosely dotted lines represent an SNR of $50dB$, $26dB$, $6dB$, and $3dB$ respectively}\label{fig:Gp_nl}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Identifying $S(s)$}
+	\begin{figure}[tb]
+		\includegraphics[width=\textwidth]{./Validation/Plots/S_1_vs_3.tikz}
+		\caption{The mean value of $|S(e^{j\Omega},\hat{\theta}_N)|$ calculated analytical and from the MCS\@. The solid, dashed and dotted lines represent an SNR of $50dB$, $26dB$, and $6dB$ respectively}\label{fig:S_1_vs_3}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Identifying $G_1(s)$}
+	\begin{figure}[tb]
+		\includegraphics[width=\textwidth]{./Validation/Plots/G1_all.tikz}
+		\caption{The mean value of $|G_1(e^{j\Omega},\hat{\theta}_N)|$ calculated analytical and from the MCS\@. The solid, dashed and dotted lines represent an SNR of $50dB$, $26dB$, and $6dB$ respectively}\label{fig:G1_all}
+	\end{figure}
+\end{frame}
+\begin{frame}
+	\frametitle{Major contributions}
+	\begin{itemize}
+		\item Demonstrated two methods for finding transfer functions for checking the requirements in closed loop.
+		\item Analytical validation of the demonstrated methods.
+		\item Addressed the delay condition.
+	\end{itemize}
+\end{frame}
+
+
