@@ -17,25 +17,19 @@
 \end{frame}
 \begin{frame}
 	\frametitle{What do we need to model?}
-	\begin{columns}
-		\begin{column}{0.4\textwidth}
-			\begin{itemize}
-				\item<1-> From the PMU we get
-				\begin{itemize}
-					\item<2-> Power: $\Delta P_{e1}(s)$.
-					\item<3-> Frequency: $\Delta f(s)$.
-				\end{itemize}
-				\item<4-> We need to model how $\Delta P_{e1}(s)$ and $\Delta f(s)$ is related through the power system.
-				\item<5-> We also need to model the power plant consisting of $G_p(s)$ and $G_J(s)$.
-			\end{itemize}
-		\end{column}
-		\begin{column}{0.6\textwidth}
-			\begin{figure}
-				\includegraphics<1>{./pictures/genTrafo.tikz}
-				\includegraphics<2->{./pictures/sys.tikz}
-			\end{figure}
-		\end{column}
-	\end{columns}
+	\begin{itemize}
+		\item<1-> From the PMU we get
+		\begin{itemize}
+			\item<2-> Power: $\Delta P_{e1}(s)$.
+			\item<3-> Frequency: $\Delta f(s)$.
+		\end{itemize}
+		\item<4-> We need to model how $\Delta P_{e1}(s)$ and $\Delta f(s)$ is related through the power system.
+		\item<5-> We also need to model the power plant consisting of $G_p(s)$ and $G_J(s)$.
+	\end{itemize}
+	\begin{figure}
+		\includegraphics<1>{./pictures/genTrafo.tikz}
+		\includegraphics<2->{./pictures/sys.tikz}
+	\end{figure}
 \end{frame}
 \begin{frame}
 	\frametitle{Power plant model}
@@ -92,6 +86,7 @@
 	\frametitle{Simulation Result}
 	\begin{figure}
 		\includegraphics[width=0.8\textwidth]{./pictures/frequency_comp.tikz}
+		\caption{Power spectrum density of measured and simulated frequency}
 	\end{figure}
 \end{frame}
 \begin{frame}

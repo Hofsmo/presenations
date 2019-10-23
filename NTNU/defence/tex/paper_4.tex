@@ -1,7 +1,7 @@
 \section{Comparison of a PMU-based approach and the draft requirements approach using tests from two of Statkraft's power plants Paper IV}
 \begin{frame}
 	\frametitle{Motivation}
-	\begin{itemize}[<+->]
+	\begin{itemize}
 		\item Relate the results from Paper III and the new requirements.
 		\item Test the methods on more real datasets.
 		\item Demonstrate that industry proposed tests can be done easier.
@@ -30,6 +30,7 @@
 		\begin{column}{0.5\textwidth}
 			\begin{figure}
 				\includegraphics<2>[width=\textwidth]{./pictures/nyquist_L.tikz}
+				\includegraphics<3>[width=\textwidth]{./pictures/simulink_bode_compare.tikz}
 			\end{figure}
 		\end{column}
 	\end{columns}
@@ -91,9 +92,13 @@
 		\includegraphics[width=0.8\textwidth]{./pictures/tests.png}
 \end{frame}
 \begin{frame}
-	\frametitle{Single line diagram of the plant}
+	\frametitle{Can the industry proposed tests be done easier?}
 	\begin{figure}
-		\includegraphics{./pictures/plant_sld.tikz}
+		\includegraphics<1->[width=0.6\textwidth]{./pictures/aura_signals.tikz}
+	\end{figure}
+	\begin{figure}
+		\includegraphics<1>[width=0.6\textwidth]{./pictures/frd.tikz}
+		\includegraphics<2>[width=0.6\textwidth]{./pictures/frd_vs_bj.tikz}
 	\end{figure}
 \end{frame}
 \begin{frame}
@@ -113,16 +118,6 @@
 		\begin{figure}[tb]
 			\includegraphics[width=0.8\textwidth]{./pictures/G1_aura.tikz}
 		\end{figure}
-\end{frame}
-\begin{frame}
-	\frametitle{Can the industry proposed tests be done easier?}
-	\begin{figure}
-		\includegraphics<1->[width=0.6\textwidth]{./pictures/aura_signals.tikz}
-	\end{figure}
-	\begin{figure}
-		\includegraphics<1>[width=0.6\textwidth]{./pictures/frd.tikz}
-		\includegraphics<2>[width=0.6\textwidth]{./pictures/frd_vs_bj.tikz}
-	\end{figure}
 \end{frame}
 \begin{frame}
 	\frametitle{Control system data in closed loop}

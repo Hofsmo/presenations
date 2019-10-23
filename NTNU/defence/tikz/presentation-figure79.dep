@@ -1,7 +1,0 @@
-tikz/presentation-figure79.pdf: ./Validation/Plots/G0.csv
-tikz/presentation-figure79.pdf: ./Validation/csv/G1_1_mean_r_50.csv
-tikz/presentation-figure79.pdf: ./Validation/csv/G1_1_mean_r_26.csv
-tikz/presentation-figure79.pdf: ./Validation/csv/G1_1_mean_r_6.csv
-tikz/presentation-figure79.pdf: ./Validation/csv/G1_4_mean_r_50.csv
-tikz/presentation-figure79.pdf: ./Validation/csv/G1_4_mean_r_26.csv
-tikz/presentation-figure79.pdf: ./Validation/csv/G1_4_mean_r_6.csv

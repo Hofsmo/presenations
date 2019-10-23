@@ -29,6 +29,9 @@
 			\end{itemize}
 		\end{column}
 		\begin{column}{0.5\textwidth}
+			\begin{figure}
+				\includegraphics<2>[width=\textwidth]{./pictures/Nordic44-Bilde}
+			\end{figure}
 			\begin{itemize}
 					\item<1>[]
 				\begin{equation}
@@ -39,20 +42,18 @@
 					\mathbf{D} = -\mathbf{B}_{22}^{-1}\mathbf{B}_{21}
 				\end{equation}
 			\end{itemize}
-			\begin{figure}
-				\includegraphics<2>[width=\textwidth]{./pictures/Nordic44-Bilde}
-			\end{figure}
 		\end{column}
 	\end{columns}
 \end{frame}
 \begin{frame}
 	\frametitle{Identification cases}
 	\begin{enumerate}
-		\item The plant is operating under normal conditions with speed feedback and we have access to the control system signals.
-		\item The plant is still operating under speed feedback, but we don't have access to the control system signals for the identification and therefore use frequency as an estimate for the speed.
-		\item The plant is operating with frequency feedback and we have access to the frequency measurements.
-		\item In this case we have disconnected the input to the governor and replaced it with our own signal.
+		\item \textbf{Case 1} Normal operation and speed feedback.
+		\item \textbf{Case 2} Normal operation, speed feedback and PMU.
+		\item \textbf{Case 3} Normal operation, frequency feedback and PMU.
+		\item \textbf{Case 4} Open loop operation. 
 	\end{enumerate}
+	\includegraphics{./pictures/plant.tikz}
 \end{frame}
 \begin{frame}
 	\frametitle{Test the different cases}
@@ -88,7 +89,7 @@
 \begin{frame}
 		\frametitle{Disturbance rejection function $G_1(s)$}
 	\begin{figure}
-		\includegraphics[width=0.9\textwidth]{./pictures/S_sim.tikz}
+		\includegraphics[width=0.9\textwidth]{./pictures/G0_req_sim.tikz}
 	\end{figure}
 \end{frame}
 \begin{frame}
