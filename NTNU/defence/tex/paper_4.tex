@@ -1,4 +1,4 @@
-\section{Comparison of a PMU-based approach and the draft requirements approach using tests from two of Statkraft's power plants Paper IV}
+\section{Tests at Statkraft's power plants Paper IV}
 \begin{frame}
 	\frametitle{Motivation}
 	\begin{itemize}
@@ -7,33 +7,6 @@
 		\item Demonstrate that industry proposed tests can be done easier.
 		\item Less theoretical presentation in a more industry focused conference.
 	\end{itemize}
-\end{frame}
-\begin{frame}
-	\frametitle{The new requirements}
-	\begin{columns}
-		\begin{column}{0.5\textwidth}
-			\begin{itemize}[<+->]
-				\item Puts requirements on an aggregated system model.
-					\includegraphics<1>{./pictures/req_sys.tikz}
-				\item Stability requirement
-				\begin{align}
-						M_s &= \max |\frac{1}{1+G_{p}(j\Omega)G_{J}(j\Omega)}|\nonumber \\
-							&= \max |S(j\Omega)|
-				\end{align}
-				\item Performance requirement
-				\begin{equation}
-					|G_1(j\Omega)| <\frac{\sigma_{\omega_{req}}}{\sqrt{\phi_{P_{e}}(j\Omega)}}
-				\end{equation}
-				\item Requirement per plant stated using a per unit conversion
-			\end{itemize}
-		\end{column}
-		\begin{column}{0.5\textwidth}
-			\begin{figure}
-				\includegraphics<2>[width=\textwidth]{./pictures/nyquist_L.tikz}
-				\includegraphics<3>[width=\textwidth]{./pictures/simulink_bode_compare.tikz}
-			\end{figure}
-		\end{column}
-	\end{columns}
 \end{frame}
 \begin{frame}
 	\frametitle{Alternative requirements}
@@ -85,7 +58,7 @@
 \begin{frame}
 	\frametitle{Dataset from Statkraft}
 	\begin{itemize}[<+->]
-		\item One of Norway's biggest power producers.
+		\item Norway's biggest power producers.
 		\item They performed the tests from the draft requirements
 		\item By chance I had PMU measurements from the same plant.
 		\end{itemize}

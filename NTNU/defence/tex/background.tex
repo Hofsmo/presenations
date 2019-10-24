@@ -23,17 +23,49 @@
 	\begin{columns}
 		\begin{column}{0.5\textwidth}
 			\begin{itemize}
-				\item<1-> Statnett pays all power plant owners to provide frequency control.
-				\item<2-> However, they don't provide the same quality of service.
-				\item<3-> Renewable energy sources such as wind and solar don't contribute.
+					\item<1-> Statnett pays all power plant owners to provide frequency control.(droop $\rho =\Delta f/\Delta P$)
+				\item<2-> However, the system is not in steady state.
+				\item<3-> Plants with the same droop settings don't have to behave the same.
+				\item<4-> Renewable energy sources such as wind and solar don't contribute.
 			\end{itemize}
 		\end{column}
 		\begin{column}{0.5\textwidth}
 			\begin{figure}
-				\includegraphics<1>[width=0.8\textwidth]{./pictures/fcp_response_one.tikz}
-				\includegraphics<2>[width=0.8\textwidth]{./pictures/fcp_response.tikz}
-				\includegraphics<3->[width=0.8\textwidth]{./pictures/res_response.tikz}
+				\includegraphics<1>[width=0.9\textwidth]{./pictures/speedDroop.tikz}
+				\includegraphics<2>[width=0.9\textwidth]{./pictures/frequency.pdf}
+				\includegraphics<3>[width=0.9\textwidth]{./pictures/fcp_response.tikz}
+				\includegraphics<4->[width=0.9\textwidth]{./pictures/res_response.tikz}
 				\caption{Frequency control response to step change in frequency}
+			\end{figure}
+		\end{column}
+	\end{columns}
+\end{frame}
+\begin{frame}
+	\frametitle{New requirements for frequency control}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}[<+->]
+				\item Puts requirements on an aggregated system model.
+					\includegraphics<1>{./pictures/req_sys.tikz}
+				\item Stability requirement
+				\begin{align}
+						M_s &= \max |\frac{1}{1+G_{p}(j\Omega)G_{J}(j\Omega)}|\nonumber \\
+							&= \max |S(j\Omega)|
+				\end{align}
+				\item Performance requirement
+				\begin{equation}
+					|G_1(j\Omega)| <\frac{\sigma_{\omega_{req}}}{\sqrt{\phi_{P_{e}}(j\Omega)}}
+				\end{equation}
+				\begin{equation}
+					G_1(s) = S(s)G_J(s)
+				\end{equation}
+				\item Requirement per plant stated using per unit systems
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{figure}
+				\includegraphics<2>[width=\textwidth]{./pictures/nyquist_L.tikz}
+				\includegraphics<3>[width=\textwidth]{./pictures/simulink_bode_compare.tikz}
 			\end{figure}
 		\end{column}
 	\end{columns}

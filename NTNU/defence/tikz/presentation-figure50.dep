@@ -1,2 +1,2 @@
-tikz/presentation-figure50.pdf: ./pictures/S_ident_pmu.csv
-tikz/presentation-figure50.pdf: ./pictures/S_min_control.csv
+tikz/presentation-figure50.pdf: ./pictures/G0_pmu.csv
+tikz/presentation-figure50.pdf: ./pictures/G0_control.csv
