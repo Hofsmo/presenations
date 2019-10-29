@@ -6,19 +6,15 @@
 			\begin{itemize}
 				\item<1-> Why do we get different results?
 				\item<2-> The signals we use are corrupted by noise.
-				\item<3-> From system identification we have that the error will be asymptotic normally distributed
-				\item<4-> However, first we need to prove the identifiability of the system
+				\item<3-> Before we can talk about the different results, we need to validate our approach.
 			\end{itemize}
 		\end{column}
 		\begin{column}{0.5\textwidth}
 				\begin{figure}
 					\includegraphics<1>[width=0.7\textwidth]{./pictures/bode.tikz}
 					\includegraphics<2>{./pictures/v_block.tikz}
-					\includegraphics<4>{./pictures/identifiability.tikz}
+					\includegraphics<3>{./pictures/identifiability.tikz}
 				\end{figure}
-				\begin{equation*}\onslide<3>
-						\sqrt{N}(\hat{\theta}_n-\theta^*) \in AsN(0,P_{\theta})
-				\end{equation*}
 		\end{column}
 	\end{columns}
 \end{frame}
@@ -51,7 +47,10 @@
 		\begin{column}{0.3\textwidth}
 			\begin{itemize}[<+->]
 				\item The system we are identifying
-					
+					\begin{itemize}
+						\item Not $G_p(s)$.
+						\item Opposite $u$ and $y$ from Paper I.
+					\end{itemize}
 				\item We use a small power system
 				\item We use a dc power flow 
 				\item This results in the following block diagram

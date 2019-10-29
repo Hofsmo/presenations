@@ -1,2 +1,0 @@
-tikz/presentation-figure50.pdf: ./pictures/G0_pmu.csv
-tikz/presentation-figure50.pdf: ./pictures/G0_control.csv

@@ -5,128 +5,159 @@
 		\begin{column}{0.5\textwidth}
 			\begin{itemize}
 				\item<1-> The power system frequency measures the power balance.
-				\item<2-> It is the responsibility of Statnett to control the frequency.
+				\item<2-> It is the responsibility of the TSOs to control the frequency.
 				\item<3-> However, it is the power plant owners who can control the frequency.
+				\item<4-> The TSOs pay all power plant owners above a certain size to provide frequency control.(droop $\rho =\Delta f/\Delta P$)
 			\end{itemize}
 		\end{column}
 		\begin{column}{0.5\textwidth}
 			\begin{figure}
 				\includegraphics<1>[width=0.8\textwidth]{./pictures/balance.png}
 				\includegraphics<2>[width=0.8\textwidth]{./pictures/balance_statnett.png}
-				\includegraphics<3->[width=0.8\textwidth]{./pictures/balance_producers.png}
+				\includegraphics<3>[width=0.8\textwidth]{./pictures/balance_producers.png}
+				\includegraphics<4>[width=0.9\textwidth]{./pictures/speedDroop.tikz}
 			\end{figure}
 		\end{column}
 	\end{columns}
 \end{frame}
 \begin{frame}
-	\frametitle{Buying frequency control}
+	\frametitle{Hydro power plant}
+	\includegraphics[width=\textwidth]{./pictures/power_plant.png}
+\end{frame}
+\begin{frame}
+	\frametitle{Implementation of the frequency containment process}
+	\begin{itemize}
+		\item $r(s)$ Reference frequency
+		\item $e(s)$ Control error
+		\item $f(s)$ Frequency
+		\item $c(s)$ Control signal
+		\item $g(s)$ Guide vane opening
+		\item $\Delta P_m(s)$ Mechanical power
+	\end{itemize}
+	\includegraphics<1->{./pictures/sys_fcp.tikz}
+	\includegraphics<2>{./pictures/fcp_block.tikz}
+\end{frame}
+\begin{frame}
+	\frametitle{The frequency containment process $G_p(s)$ in the power system}	
+	\begin{itemize}
+		\item $G_J(s)$ represents the swing dynamics of the power plant.
+		\item $v_l(s)$ represents stochastic load.
+	\end{itemize}
+	\includegraphics<1->{./pictures/sys.tikz}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Stability requirements for frequency control}
 	\begin{columns}
-		\begin{column}{0.5\textwidth}
+			\begin{column}[T]{0.5\textwidth}
 			\begin{itemize}
-					\item<1-> Statnett pays all power plant owners to provide frequency control.(droop $\rho =\Delta f/\Delta P$)
-				\item<2-> However, the system is not in steady state.
-				\item<3-> Plants with the same droop settings don't have to behave the same.
-				\item<4-> Renewable energy sources such as wind and solar don't contribute.
+				\item Stability margin from control theory:
+				\begin{equation}
+					\max |S(j\Omega)| <	M_s
+				\end{equation}
+			\item where:
+				\begin{equation}
+						S(s) = \frac{1}{1+G_p(s)G_J(s)}
+				\end{equation}
 			\end{itemize}
+			\includegraphics{./pictures/sys.tikz}
 		\end{column}
-		\begin{column}{0.5\textwidth}
-			\begin{figure}
-				\includegraphics<1>[width=0.9\textwidth]{./pictures/speedDroop.tikz}
-				\includegraphics<2>[width=0.9\textwidth]{./pictures/frequency.pdf}
-				\includegraphics<3>[width=0.9\textwidth]{./pictures/fcp_response.tikz}
-				\includegraphics<4->[width=0.9\textwidth]{./pictures/res_response.tikz}
-				\caption{Frequency control response to step change in frequency}
-			\end{figure}
+		\begin{column}[T]{0.5\textwidth}
+				\includegraphics[width=0.9\textwidth]{./pictures/S_example.tikz}
+				%\includegraphics<2>[width=0.8\textwidth]{./pictures/nyquist_L.tikz}
 		\end{column}
 	\end{columns}
 \end{frame}
 \begin{frame}
-	\frametitle{New requirements for frequency control}
+	\frametitle{Performance requirements for frequency control}
 	\begin{columns}
-		\begin{column}{0.5\textwidth}
-			\begin{itemize}[<+->]
-				\item Puts requirements on an aggregated system model.
-					\includegraphics<1>{./pictures/req_sys.tikz}
-				\item Stability requirement
-				\begin{align}
-						M_s &= \max |\frac{1}{1+G_{p}(j\Omega)G_{J}(j\Omega)}|\nonumber \\
-							&= \max |S(j\Omega)|
-				\end{align}
-				\item Performance requirement
-				\begin{equation}
-					|G_1(j\Omega)| <\frac{\sigma_{\omega_{req}}}{\sqrt{\phi_{P_{e}}(j\Omega)}}
-				\end{equation}
-				\begin{equation}
-					G_1(s) = S(s)G_J(s)
-				\end{equation}
-				\item Requirement per plant stated using per unit systems
+			\begin{column}[T]{0.5\textwidth}
+			\begin{itemize}
+				\item We want to contain frequency deviations.
+					\begin{equation}
+							\Delta \omega(s) = \frac{G_{J}}{1+G_p(s)G_J(s)}\Delta P_e(s)
+					\end{equation}
+				\item Define
+					\begin{equation}
+						G_1(s) = \frac{G_{J}}{1+G_p(s)G_J(s)}
+					\end{equation}
 			\end{itemize}
 		\end{column}
-		\begin{column}{0.5\textwidth}
-			\begin{figure}
-				\includegraphics<2>[width=\textwidth]{./pictures/nyquist_L.tikz}
-				\includegraphics<3>[width=\textwidth]{./pictures/simulink_bode_compare.tikz}
-			\end{figure}
+		\begin{column}[T]{0.5\textwidth}
+			\includegraphics[width=\textwidth]{./pictures/simulink_bode_compare.tikz}
+			\begin{equation}
+				|G_1(j\Omega)| < M_p
+		\end{equation}
 		\end{column}
 	\end{columns}
+	\includegraphics{./pictures/sys.tikz}
 \end{frame}
 \begin{frame}
 	\frametitle{Future of frequency control}
+		\begin{itemize}
+			\item Power plants have to show that they fulfill:
+				\begin{itemize}
+					\item Stability requirement $S(s) < M_s$
+					\item Performance requirement $G_1(s) < M_p$
+				\end{itemize}
+			\item To do this they need models of:
+				\begin{itemize}
+					\item $G_p(s)$
+					\item and $G_J(s)$
+				\end{itemize}
+		\end{itemize}
+	\includegraphics{./pictures/sys.tikz}
+\end{frame}
+\begin{frame}
+	\frametitle{Industry proposed tests}
 	\begin{columns}
-		\begin{column}{0.4\textwidth}
+		\begin{column}{0.3\textwidth}
 			\begin{itemize}
-				\item Power plants have to pass tests to get paid to provide frequency control.
-				\item Only those who pass the tests get paid for the service.
+				\item Time consuming.
+				\item Use system estimate for $G_J(s)$.
+				\item Input $r(s)$
+				\item Output $\Delta P_e(s)$
 			\end{itemize}
 		\end{column}
-	\begin{column}{0.6\textwidth}
-		\begin{figure}
-			\includegraphics{./pictures/block.tikz}
-			\caption{Test of power plant}
-		\end{figure}
-	\end{column}
-\end{columns}
+		\begin{column}{0.7\textwidth}
+				\includegraphics[width=\textwidth]{./pictures/tests.png}
+		\end{column}
+	\end{columns}
+	\includegraphics{./pictures/plant_open.tikz}
 \end{frame}
 \begin{frame}
-	\frametitle{Tests proposed by the industry}
-	\begin{figure}
-		\includegraphics[width=\textwidth]{./pictures/tests.png}
-		\caption{Testing procedure [source:ENTSO-E]}
-	\end{figure}
-\end{frame}
-\begin{frame}
-		\frametitle{Motivation}
-		\begin{columns}
-				\begin{column}{0.5\textwidth}
-						\begin{itemize}
-								\item<1-> The power system is never really in steady state.
-								\item<2-> Can the power plant dynamics be identified from normal operation measurements?
-						\end{itemize}
+	\frametitle{Example from real tests}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\item<1-> The power plant needs to be disconnected
+				\item<1-> Takes up to 20 hours.
+				\item<2-> Only one sine test needed with system identification.
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{figure}
+				\includegraphics<1->[width=\textwidth]{./pictures/aura_signals.tikz}
+			\end{figure}
+				\includegraphics<1>[width=\textwidth]{./pictures/frd.tikz}
+				\includegraphics<2>[width=\textwidth]{./pictures/frd_vs_bj.tikz}
 			\end{column}
-			\begin{column}{0.5\textwidth}
-						\begin{figure}
-						\includegraphics<1->[width=\textwidth]{./pictures/aura_pmu.tikz}
-				\end{figure}
-				\end{column}
-		\end{columns}
+	\end{columns}
 \end{frame}
 \begin{frame}
-		\frametitle{Research questions}
-		\begin{columns}
-				\begin{column}{0.5\textwidth}
-						\begin{itemize}
-								\item<1-> Can power plant dynamics be identified using a PMU?
-								\item<2-> Can power plant dynamics be identified using control system measurements without disturbing the operation of the plant?
-								\item<3-> What is the effect of nonlinearities on the identification?
-
-						\end{itemize}
-			\end{column}
-			\begin{column}{0.5\textwidth}
-						\begin{figure}
-						\includegraphics<1>[width=\textwidth]{./pictures/aura_pmu.tikz}
-						\includegraphics<2>[width=\textwidth]{./pictures/aura_signals.tikz}
-						\includegraphics<3>[width=\textwidth]{./pictures/backlash_response.tikz}
-				\end{figure}
-				\end{column}
-		\end{columns}
+	\frametitle{Motivation}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\item<1-> Can we do the tests easier?
+				\item<2-> The power system is never really in steady state.
+				\item<3-> Can the power plant dynamics be identified from normal operation measurements?
+					\end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{figure}
+				\includegraphics<2->[width=\textwidth]{./pictures/aura_pmu.tikz}
+			\end{figure}
+		\end{column}
+	\end{columns}
 \end{frame}

@@ -4,21 +4,14 @@
 	\begin{columns}
 		\begin{column}{0.4\textwidth}
 			\begin{itemize}
-				\item<1->  Idea from\footnotemark[1] can the power plant dynamics be identified using PMUs
-				\item<2-> Uses the same input and output measurements as in the requirements:
-				\begin{itemize}
-					\item Input: Power system frequency.
-					\item Output: Electric power.
-					\end{itemize}
+					\item Idea from\footnotemark[1] can $G_p(s)$ be identified using PMUs?
 			\end{itemize}
 		\end{column}
 		\begin{column}{0.6\textwidth}
-			\begin{figure}
-				\includegraphics<1>{./pictures/genTrafo.tikz}
-				\includegraphics<2>{./pictures/block.tikz}
-			\end{figure}
+				\includegraphics{./pictures/genTrafo.tikz}
 		\end{column}
 	\end{columns}
+		\includegraphics{./pictures/sys_fcp.tikz}
 	\footnotetext[1]{\fullcite{dinh_thuc_duong_estimation_2016}}
 \end{frame}
 \begin{frame}
@@ -26,10 +19,11 @@
 	\begin{columns}
 		\begin{column}{0.4\textwidth}
 			\begin{itemize}
-				\item Collect several datasets from PMUs.
+				\item Collect data from PMUs.
+				\item Preprocess data.
 				\item Calculate power and frequency from the measurements.
-				\item Identify dynamics using vector fitting.
-				\item Compare models.
+				\item Identify dynamics.
+				\item Validate models.
 			\end{itemize}
 		\end{column}
 		\begin{column}{0.6\textwidth}
@@ -38,49 +32,6 @@
 			\end{figure}
 		\end{column}
 	\end{columns}
-\end{frame}
-\begin{frame}
-	\frametitle{Vector fitting basics}
-	\begin{columns}[c]
-		\begin{column}{0.4\textwidth}
-			\begin{itemize}
-				\item<1-> Vector fitting fits a transfer function to measured input and output data
-				\item<2-> It assumes the system to have the following structure.
-				\item<3-> In time domain it is.
-			\end{itemize}
-		\end{column}
-		\begin{column}{0.6\textwidth}
-			\begin{itemize}
-				\item[]<1->
-					\begin{equation}
-						Y(s) = H(s)\cdot U(s)
-					\end{equation}
-				\item[]<2->
-					\begin{equation}
-						H(s) = d + \sum^{n_p}_{i=1}\frac{r_i}{s-p_i}
-					\end{equation}
-				\item[]<3->
-					\begin{equation}\label{eq:VFTD}
-   			 			y(t) \approx \tilde{d} x(t) + \sum^{n_p}_{i=1} \tilde{r}_ix_i-\sum^{n_p}_{i=1}\tilde{k}_iy_i
-					\end{equation}
-					\begin{equation}\label{eq:XVFWave}
-    					x_i = \int^t_0 e^{\tilde{p}_i(t-\tau)}x_i(\tau)d\tau
-					\end{equation}
-					\begin{equation}\label{eq:YVFWave}
-    					y_i = \int^t_0 e^{\tilde{p}_{i}(t-\tau)}y_i(\tau)d\tau
-					\end{equation}
-			\end{itemize}
-		\end{column}
-	\end{columns}
-\end{frame}
-\begin{frame}
-	\frametitle{Vector fitting basics ctd.}
-	\begin{itemize}
-		\item Find $\tilde{d}$, $\tilde{r}_i$ and $\tilde{k}_i$ to minimize:
-	\end{itemize}
-	\begin{equation}
-		y(t) - (\tilde{d} x(t) + \sum^{n_p}_{i=1} \tilde{r}_ix_i-\sum^{n_p}_{i=1}\tilde{k}_iy_i)
-	\end{equation}
 \end{frame}
 \begin{frame}
 	\frametitle{Estimated droop and bandwidth}
@@ -93,12 +44,6 @@
 		Fall 2015 & 10 & $4.16$\\ \hline
 		Spring 2016 & 8 & $2.41$\\ \hline
 	\end{tabular}
-\end{frame}
-\begin{frame}[fragile]
-	\frametitle{Cross validation using distant data sets}
-	\includegraphics<1>[width=0.45\textwidth]{./pictures/frequencies.tikz}
-	\includegraphics<1>[width=0.45\textwidth]{./pictures/powers.tikz}
-	\includegraphics<2>[width=\textwidth]{./pictures/cross_val}
 \end{frame}
 \begin{frame}
 	\frametitle{Main contributions to the research questions}

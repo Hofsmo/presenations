@@ -7,21 +7,28 @@
 \end{frame}
 \begin{frame}
 	\frametitle{Systems to be identified}
-	\begin{equation}
-		e(s) = G_1(s)\Delta P_{e1}(s)+ S(s)r(s)
-	\end{equation}
-	\begin{equation}
-		\Delta \omega_1(s) = G_s(s)G_t(s)G_J(s)c(s)- G_J(s)\Delta P_{e1}(s)
-	\end{equation}
-	\begin{equation}
+	\begin{itemize}
+		\item Method 1:
+			\begin{equation}
+				e(s) = G_1(s)\Delta P_{e1}(s)+ S(s)r(s)
+			\end{equation}
+		\item Method 2:
+			\begin{equation}
+				\Delta \omega_1(s) = G_s(s)G_t(s)G_J(s)c(s)- G_J(s)\Delta P_{e1}(s)
+			\end{equation}
+			\begin{itemize}
+				\item Assume $G_c(s)$ to be known.
+			\end{itemize}
+		\begin{equation}
 			G_p(s) = \frac{G_c(s)G_s(s)G_t(s)G_J(s)}{G_J(s)(1+\rho G_c(s)G_s(s))}
-	\end{equation}
+		\end{equation}
+	\end{itemize}
 	\begin{itemize}
 		\item<2-> Two approaches.
 		\item<3-> Extra excitation is needed.
 		\item<4-> PMU approach is a special case without extra excitation.
 	\end{itemize}
-		\includegraphics<1>{./pictures/sys_extended.tikz}
+	\includegraphics<1>{./pictures/sys_extended.tikz}
 \end{frame}
 \begin{frame}
 	\frametitle{Identifiability}
