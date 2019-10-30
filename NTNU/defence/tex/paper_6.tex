@@ -2,40 +2,60 @@
 \begin{frame}
 	\frametitle{Motivation}
 	\begin{itemize}
-		\item How to best identify hydro power plant dynamics given access to control system data.
+		\item How to best check the requirements given access to control system data.
 	\end{itemize}
 \end{frame}
 \begin{frame}
-	\frametitle{Systems to be identified}
-	\begin{itemize}
-		\item Method 1:
-			\begin{equation}
-				e(s) = G_1(s)\Delta P_{e1}(s)+ S(s)r(s)
-			\end{equation}
-		\item Method 2:
-			\begin{equation}
-				\Delta \omega_1(s) = G_s(s)G_t(s)G_J(s)c(s)- G_J(s)\Delta P_{e1}(s)
-			\end{equation}
+	\frametitle{What do we want to check}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
 			\begin{itemize}
-				\item Assume $G_c(s)$ to be known.
+				\item Stability requirement $|S(j\Omega)| < M_s$
+				\item Performance requirement $|G_1(j\Omega)| < M_p$
+				\item In the requirements this is done by identifying.
+			\begin{itemize}
+				\item $G_p(s)$ in open loop 
+				\item and $G_J(s)$ from the system
 			\end{itemize}
-		\begin{equation}
-			G_p(s) = \frac{G_c(s)G_s(s)G_t(s)G_J(s)}{G_J(s)(1+\rho G_c(s)G_s(s))}
-		\end{equation}
-	\end{itemize}
+		\end{itemize}
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{equation*}
+				S(s) = \frac{1}{1+G_p(s)G_J(s)}
+			\end{equation*}
+			\begin{equation*}
+				G_1(s) = \frac{G_{J}}{1+G_p(s)G_J(s)}
+			\end{equation*}
+		\end{column}
+	\end{columns}
+	\includegraphics{./pictures/sys.tikz}
+\end{frame}
+\begin{frame}
+		\frametitle{Identify $G_p(s)$ and $G_J(s)$ in closed loop}
+	\begin{equation}
+		\Delta \omega_1(s) = G_s(s)G_t(s)G_J(s)c(s)- G_J(s)\Delta P_{e1}(s)
+	\end{equation}
 	\begin{itemize}
-		\item<2-> Two approaches.
-		\item<3-> Extra excitation is needed.
-		\item<4-> PMU approach is a special case without extra excitation.
+		\item Assume $G_c(s)$ to be known.
 	\end{itemize}
-	\includegraphics<1>{./pictures/sys_extended.tikz}
+	\begin{equation}
+		G_p(s) = \frac{G_c(s)G_s(s)G_t(s)G_J(s)}{G_J(s)(1+\rho G_c(s)G_s(s))}
+	\end{equation}
+	\includegraphics{./pictures/sys_extended.tikz}
+\end{frame}
+\begin{frame}
+		\frametitle{Identify $G_s(s)$ and $S(s)$ directly in closed loop}
+		\begin{equation}
+			e(s) = G_1(s)\Delta P_{e1}(s)+ S(s)r(s)
+		\end{equation}
+	\includegraphics{./pictures/sys_extended.tikz}
 \end{frame}
 \begin{frame}
 	\frametitle{Identifiability}
 	\begin{itemize}
 		\item<1-> The systems can be identified
 		\item<2-> However, there is a lack of delay
-		\item<3-> This is no problem if $v(s)<<v_l(s)$.
+		\item<2-> This is no problem if the effect of $v(s)$ in $\Delta P_e(s)$ is small to the effect of $v_l(s)$.
 	\end{itemize}
 		\includegraphics<1>{./pictures/sys_extended.tikz}
 		\includegraphics<2->{./pictures/sys_extended_red.tikz}
@@ -65,11 +85,12 @@
 	\end{figure}
 \end{frame}
 \begin{frame}
-	\frametitle{Major contributions}
+	\frametitle{Main contributions}
 	\begin{itemize}
 		\item Demonstrated two methods for finding transfer functions for checking the requirements in closed loop.
+		\item The best method for finding the transfer functions is to first identify $G_p(s)$ and $G_J(s)$.
 		\item Analytical validation of the demonstrated methods.
-		\item Addressed the delay condition.
+		\item Discussed the delay condition introduced in Paper II.
 	\end{itemize}
 \end{frame}
 

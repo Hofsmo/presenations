@@ -9,114 +9,59 @@
 	\end{itemize}
 \end{frame}
 \begin{frame}
-	\frametitle{Alternative requirements}
+	\frametitle{Power plant location}
+	\includegraphics[width=\textwidth]{./pictures/romsdalshorn.jpg}
+\end{frame}
+\begin{frame}
+	\frametitle{Getting data from the control system}
 	\begin{columns}
-		\begin{column}{0.5\textwidth}
-				\begin{itemize}[<+->]
-				\item Place requirements directly on one power plant.
-				\includegraphics<1>{./pictures/sys.tikz}
-				\includegraphics<1>{./pictures/req_sys.tikz}
-				\item We already have an estimate of $G_1(s)$.
-				\item We need to find $S(s)$
+		\begin{column}{0.3\textwidth}
+			\begin{itemize}
+					\item Collected Electric power $\Delta P_e$
+				\item and power system frequency $f$.
 			\end{itemize}
 		\end{column}
-		\begin{column}{0.5\textwidth}
-			\begin{figure}
-				\includegraphics<2>[width=\textwidth]{./pictures/PMU_bode.tikz}
-			\end{figure}
+		\begin{column}{0.7\textwidth}
+			\includegraphics[angle=-90, origin= c, height=\textheight]{./pictures/hymatek.jpg}
 		\end{column}
 	\end{columns}
 \end{frame}
 \begin{frame}
-	\frametitle{Estimating $S(s)$}
-	\begin{itemize}[<+->]
-		\item
-		\begin{equation} 
-			G_1(s) = G_J(s)S(s)
-		\end{equation}
-		\item
-		\begin{equation}
-			G_J(s) = \frac{1}{2Hs+K_d}
-		\end{equation}
-		\item
-		\begin{equation}
-			2H>>K_d
-		\end{equation}
-		\item
-		\begin{equation}
-			S(s) \approx 2HsG_1(s)
-		\end{equation}
-		\item Need to estimate $H$
-	\end{itemize}
+	\frametitle{Measurement transformer}
+	\includegraphics[angle=-90, origin=c, height=\textheight]{./pictures/trafo.jpg}
 \end{frame}
 \begin{frame}
-	\frametitle{Estimating $H$}
-	\begin{figure}
-			\includegraphics[width=0.9\textwidth]{./pictures/transf_comp.tikz}
-	\end{figure}
+	\frametitle{Example of dataset}
+	\includegraphics[width=\textwidth]{./pictures/Grytten_signals.tikz}
 \end{frame}
 \begin{frame}
-	\frametitle{Dataset from Statkraft}
-	\begin{itemize}[<+->]
-		\item Norway's biggest power producers.
-		\item They performed the tests from the draft requirements
-		\item By chance I had PMU measurements from the same plant.
-		\end{itemize}
-		\includegraphics[width=0.8\textwidth]{./pictures/tests.png}
-\end{frame}
+	\frametitle{Detecting a new tuning}
+	\begin{columns}
+		\begin{column}{0.65\textwidth}
+			\includegraphics[width=\textwidth]{./pictures/Grytten_R_5.tikz}
+		\end{column}
+		\begin{column}{0.35\textwidth}
+			\begin{equation*}
+				G_1(s) = \frac{G_{J}}{1+G_p(s)G_J(s)}
+			\end{equation*}
+		\end{column}
+	\end{columns}
+	\includegraphics{./pictures/sys.tikz}
+\end{frame}	
 \begin{frame}
-	\frametitle{Can the industry proposed tests be done easier?}
-	\begin{figure}
-		\includegraphics<1->[width=0.6\textwidth]{./pictures/aura_signals.tikz}
-	\end{figure}
-	\begin{figure}
-		\includegraphics<1>[width=0.6\textwidth]{./pictures/frd.tikz}
-		\includegraphics<2>[width=0.6\textwidth]{./pictures/frd_vs_bj.tikz}
-	\end{figure}
-\end{frame}
-\begin{frame}
-	\frametitle{Datasets used}
-	\begin{figure}
-			\includegraphics[width=0.8\textwidth]{./pictures/signals_step.tikz}
-	\end{figure}
-\end{frame}
-\begin{frame}
-	\frametitle{Estimated sensitivity functions}
-		\begin{figure}[tb]
-			\includegraphics[width=0.8\textwidth]{./pictures/S_aura.tikz}
-		\end{figure}
-\end{frame}
-\begin{frame}
-	\frametitle{Estimated $G_1(s)$}
-		\begin{figure}[tb]
-			\includegraphics[width=0.8\textwidth]{./pictures/G1_aura.tikz}
-		\end{figure}
-\end{frame}
-\begin{frame}
-	\frametitle{Control system data in closed loop}
-	\begin{figure}
-		\includegraphics<1->[width=0.4\textwidth]{./pictures/Grytten_signals.tikz}
-	\end{figure}
-	\begin{figure}
-		\includegraphics<1>[width=0.6\textwidth]{./pictures/Grytten_new_PID.tikz}
-		\includegraphics<2>[width=0.6\textwidth]{./pictures/Grytten_R_5.tikz}
-%		\includegraphics<3>[width=0.6\textwidth]{./pictures/Grytten_windows.tikz}
-	\end{figure}
-	\begin{itemize}
-			\item<3>[]
-			\begin{tabular}{c c c c c}
-			\toprule
-			Droop & $60\mathrm{min}$ & $45\mathrm{min}$ & $30\mathrm{min}$ & $15\mathrm{min}$ \\
-			\midrule
-			$10\%$ & $9.5\%$ & $9.5\%$ & $9.5\%$ & $9.5\%$ \\
-			$6\%$ & $6.2\%$ & $6.0\%$ & $5.9\%$ & $6.1\%$ \\
-			$5\%$ & $4.9\%$ & $4.9\%$ & $5.0\%$ & $5.1\%$ \\
-			$3\%$ & $3.1\%$ & $3.1\%$ & $3.1\%$ & $2.9\%$ \\
-			$2\%$ & $2.0\%$ & $1.8\%$ & $1.8\%$ & $1.7\%$\\
-			\bottomrule
-		\end{tabular}
-	\end{itemize}
-\end{frame}
+	\frametitle{Detecting droop changes}
+	\begin{columns}
+		\begin{column}{0.65\textwidth}
+			\includegraphics[width=\textwidth]{./pictures/Grytten_new_PID.tikz}
+		\end{column}
+		\begin{column}{0.35\textwidth}
+			\begin{equation*}
+				G_1(s) = \frac{G_{J}}{1+G_p(s)G_J(s)}
+			\end{equation*}
+		\end{column}
+	\end{columns}
+	\includegraphics{./pictures/sys.tikz}
+\end{frame}	
 \begin{frame}
 	\frametitle{Main Contributions}
 	\begin{itemize}

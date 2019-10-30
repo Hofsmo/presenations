@@ -13,11 +13,12 @@
 	\begin{itemize}
 		\item<1-> From the PMU we get
 		\begin{itemize}
-			\item<2-> Power: $\Delta P_{e}(s)$.
-			\item<3-> Frequency: $\Delta f(s)\approx 2\pi\Delta \omega(s)$.
+			\item<1-> Power: $\Delta P_{e}(s)$.
+			\item<1-> Frequency: $\Delta f(s)\approx 2\pi\Delta \omega(s)$.
 		\end{itemize}
-		\item<4-> We need to model how $\Delta P_{e}(s)$ and $\Delta f(s)$ is related through the power system.
-		\item<5-> We also need to model the power plant consisting of $G_p(s)$ and $G_J(s)$.
+		\item<2-> We need to model how $\Delta P_{e}(s)$ and $\Delta f(s)$ is related through the power system.
+		\item<2-> We need to model the external perturbation.
+		\item<2-> We also need to model the power plant consisting of $G_p(s)$ and $G_J(s)$.
 	\end{itemize}
 	\begin{figure}
 		\includegraphics<1>{./pictures/genTrafo.tikz}
@@ -65,19 +66,32 @@
 	\includegraphics{./pictures/DC.tikz}
 \end{frame}
 \begin{frame}
-	\frametitle{Test system}
-		\begin{figure}
-			\includegraphics<1>[width=0.8\textwidth]{./pictures/sld.tikz}
-			\includegraphics<2>{./pictures/block_test_sys.tikz}
-			\caption{\only<1>{Single line diagram}\only<2>{Block diagram}}
-		\end{figure}
+	\frametitle{Single line diagram of test system}
+	\begin{itemize}
+		\item Generator $1$ is the plant we study.
+		\item Generator $2$ represents the rest of the power system.
+		\item The load represents the stochastic behaviour of all loads.
+		\item $x_1$ and $x_2$ are line reactances.
+		\item $x'_{d1}$ and $x'_{d2}$ are generator reactances.
+	\end{itemize}
+		\includegraphics[width=0.8\textwidth]{./pictures/sld.tikz}
 \end{frame}
 \begin{frame}
-	\frametitle{Simulation Result}
-	\begin{figure}
-		\includegraphics[width=0.8\textwidth]{./pictures/frequency_comp.tikz}
-		\caption{Power spectrum density of measured and simulated frequency}
-	\end{figure}
+	\begin{columns}
+		\begin{column}{0.3\textwidth}
+			\begin{itemize}
+					\item $G_1(s)$ the plant we investigate.
+					\item $v_{l5}(s)$ external perturbation.
+			\end{itemize}
+			\begin{equation*}
+				G_1(s) = \frac{G_{J}}{1+G_p(s)G_J(s)}
+			\end{equation*}
+		\end{column}
+		\begin{column}{0.7\textwidth}
+			\frametitle{Block diagram of test system}
+			\includegraphics{./pictures/block_test_sys.tikz}
+		\end{column}
+	\end{columns}
 \end{frame}
 \begin{frame}
 	\frametitle{Main contributions}
