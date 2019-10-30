@@ -1,10 +1,10 @@
-\section{Simulation studies Paper V}
+\section{More detailed simulations}
 \begin{frame}
 	\frametitle{Motivation}
 	\begin{itemize}
 		\item Test with a more detailed power plant model.
 		\item Test with a more detailed power system model.
-		\item Investigate some of the assumptions from previous papers.
+		\item Investigate the frequency assumption.
 	\end{itemize}
 \end{frame}
 \begin{frame}
@@ -27,8 +27,8 @@
 	\begin{columns}
 		\begin{column}{0.3\textwidth}
 			\begin{itemize}
-				\item $f(s)$ is the derivative of the measured voltage.
-				\item $\Delta \omega(s)$ is the rotational speed of the generator rotor.
+				\item $f(s)$ is the fundamental frequency of the measured voltage.
+				\item $\omega(s)$ is the rotational speed of the generator rotor.
 				\item Increased the impedance between the generator and PMU.
 				\item $100$ simulations for each impedance size-
 			\end{itemize}
@@ -40,11 +40,8 @@
 	\end{columns}
 \end{frame}
 \begin{frame}
-	\frametitle{Main contributions}
+	\frametitle{Main contribution}
 	\begin{itemize}
-		\item Tested the methods with a more detailed power plant model.
-		\item Tested the methods  with a more detailed power system model.
-		\item Investigate some of the assumptions from previous papers.
+		\item Demonstrated that the results for faster dynamics are biased if the frequency is measured instead of the rotational speed of the rotor.
 	\end{itemize}
 \end{frame}
-

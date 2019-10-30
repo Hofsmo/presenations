@@ -1,4 +1,4 @@
-\section{The best way to do the identification Paper VI}
+\section{The best way to do the identification}
 \begin{frame}
 	\frametitle{Motivation}
 	\begin{itemize}
@@ -31,9 +31,9 @@
 	\includegraphics{./pictures/sys.tikz}
 \end{frame}
 \begin{frame}
-		\frametitle{Identify $G_p(s)$ and $G_J(s)$ in closed loop}
+		\frametitle{Identify $G_p(s)$ and $G_J(s)$ in closed loop, Method 1}
 	\begin{equation}
-		\Delta \omega_1(s) = G_s(s)G_t(s)G_J(s)c(s)- G_J(s)\Delta P_{e1}(s)
+		\Delta \omega(s) = G_s(s)G_t(s)G_J(s)c(s)- G_J(s)\Delta P_{e}(s)
 	\end{equation}
 	\begin{itemize}
 		\item Assume $G_c(s)$ to be known.
@@ -41,48 +41,66 @@
 	\begin{equation}
 		G_p(s) = \frac{G_c(s)G_s(s)G_t(s)G_J(s)}{G_J(s)(1+\rho G_c(s)G_s(s))}
 	\end{equation}
-	\includegraphics{./pictures/sys_extended.tikz}
+	\includegraphics{./pictures/sys_extended_Gp_GJ.tikz}
 \end{frame}
 \begin{frame}
-		\frametitle{Identify $G_s(s)$ and $S(s)$ directly in closed loop}
+		\frametitle{Identify $G_1(s)$ and $S(s)$ directly in closed loop, Method 2}
 		\begin{equation}
-			e(s) = G_1(s)\Delta P_{e1}(s)+ S(s)r(s)
+			e(s) = G_1(s)\Delta P_{e}(s)+ S(s)r(s)
 		\end{equation}
-	\includegraphics{./pictures/sys_extended.tikz}
+	\includegraphics{./pictures/sys_extended_S_G1.tikz}
 \end{frame}
 \begin{frame}
 	\frametitle{Identifiability}
 	\begin{itemize}
 		\item<1-> The systems can be identified
 		\item<2-> However, there is a lack of delay
-		\item<2-> This is no problem if the effect of $v(s)$ in $\Delta P_e(s)$ is small to the effect of $v_l(s)$.
+		\item<2-> This is no problem if the effect of $v(s)$ in $\Delta P_e(s)$ is small compared to the effect of $v_l(s)$.
 	\end{itemize}
 		\includegraphics<1>{./pictures/sys_extended.tikz}
 		\includegraphics<2->{./pictures/sys_extended_red.tikz}
 \end{frame}
-
 \begin{frame}
-	\frametitle{Identifying $G_p(s)$ and $G_J(s)$}
-	\begin{figure}
-		\includegraphics[width=\textwidth]{./Validation/Plots/GP_GJ.tikz}
-		\caption{The mean value of $|G_p(e^{j\Omega},\hat{\theta}_N)|$ and $|G_J(e^{j\Omega},\hat{\theta}_N)|$ calculated from the MCS\@. The solid lines are the analytical calculated versions and the dashed loosely dashed dotted and loosely dotted lines represent an SNR of $50dB$, $26dB$, $6dB$, and $3dB$ respectively}\label{fig:Gp_nl}
-	\end{figure}
+		\frametitle{Identifying $G_p(s)$ and $G_J(s)$ with different $v(s)$ amplitudes}
+	\begin{columns}
+		\begin{column}{0.3\textwidth}
+			\begin{itemize}
+				\item Mean frequency response from $1000$ simulations for each amplitude of $v(s)$
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.7\textwidth}
+			\includegraphics{./pictures/sys_Gp_GJ.tikz}
+		\end{column}
+	\end{columns}
+	\includegraphics[width=\textwidth]{./Validation/Plots/GP_GJ.tikz}
 \end{frame}
-
 \begin{frame}
-	\frametitle{Identifying $S(s)$}
-	\begin{figure}[tb]
-		\includegraphics[width=\textwidth]{./Validation/Plots/S_1_vs_3.tikz}
-		\caption{The mean value of $|S(e^{j\Omega},\hat{\theta}_N)|$ calculated analytical and from the MCS\@. The solid, dashed and dotted lines represent an SNR of $50dB$, $26dB$, and $6dB$ respectively}\label{fig:S_1_vs_3}
-	\end{figure}
+		\frametitle{Identifying $S(s)$ with different $v(s)$ amplitudes}
+	\begin{columns}
+		\begin{column}{0.3\textwidth}
+			\begin{itemize}
+				\item Mean frequency response from $1000$ simulations for each amplitude of $v(s)$
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.7\textwidth}
+			\includegraphics{./pictures/sys_S.tikz}
+		\end{column}
+	\end{columns}
+	\includegraphics[width=\textwidth]{./Validation/Plots/S_1_vs_3.tikz}
 \end{frame}
-
 \begin{frame}
-	\frametitle{Identifying $G_1(s)$}
-	\begin{figure}[tb]
-		\includegraphics[width=\textwidth]{./Validation/Plots/G1_all.tikz}
-		\caption{The mean value of $|G_1(e^{j\Omega},\hat{\theta}_N)|$ calculated analytical and from the MCS\@. The solid, dashed and dotted lines represent an SNR of $50dB$, $26dB$, and $6dB$ respectively}\label{fig:G1_all}
-	\end{figure}
+		\frametitle{Identifying $G_1(s)$ with different $v(s)$ amplitudes}
+	\begin{columns}
+		\begin{column}{0.3\textwidth}
+			\begin{itemize}
+				\item Mean frequency response from $1000$ simulations for each amplitude of $v(s)$
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.7\textwidth}
+			\includegraphics{./pictures/sys_G1.tikz}
+		\end{column}
+	\end{columns}
+	\includegraphics[width=\textwidth]{./Validation/Plots/G1_all.tikz}
 \end{frame}
 \begin{frame}
 	\frametitle{Main contributions}
@@ -90,7 +108,7 @@
 		\item Demonstrated two methods for finding transfer functions for checking the requirements in closed loop.
 		\item The best method for finding the transfer functions is to first identify $G_p(s)$ and $G_J(s)$.
 		\item Analytical validation of the demonstrated methods.
-		\item Discussed the delay condition introduced in Paper II.
+		\item Discussed the delay condition introduced earlier.
 	\end{itemize}
 \end{frame}
 

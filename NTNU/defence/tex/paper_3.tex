@@ -1,13 +1,13 @@
-\section{Theoretical validation Paper III}
+\section{Theoretical validation}
 \begin{frame}
-	\frametitle{Background}
+	\frametitle{Motivation}
 	\begin{itemize}
 		\item To validate the PMU method analytically.
 	\end{itemize}
 	\includegraphics{./pictures/genTrafo.tikz}
 \end{frame}
 \begin{frame}
-	\frametitle{Modelled used for the validation}
+	\frametitle{Modelling used for the validation}
 	\begin{columns}
 		\begin{column}{0.3\textwidth}
 			\begin{itemize}
@@ -32,7 +32,7 @@
 			G_1(s) = \frac{G_{J}}{1+G_p(s)G_J(s)}
 		\end{equation*}
 	\end{itemize}
-		\includegraphics{./pictures/sys.tikz}
+		\includegraphics{./pictures/sys_G1.tikz}
 \end{frame}
 \begin{frame}
 	\frametitle{Assumptions for the theoretical validation}
@@ -70,15 +70,15 @@
 	\begin{columns}
 		\begin{column}{0.35\textwidth}
 			\begin{itemize}
-				\item $f(s)$ is the derivative of the measured voltage.
-				\item $\Delta \omega(s)$ is the rotational speed of the generator rotor.
+				\item $f(s)$ is the fundamental frequency of the voltage.
+				\item $\omega(s)$ is the rotational speed of the generator rotor.
 			\end{itemize}
 		\end{column}
 		\begin{column}{0.65\textwidth}
 				\includegraphics[width=\textwidth]{./pictures/genTrafo.tikz}
 		\end{column}
 	\end{columns}
-	\includegraphics{./pictures/sys.tikz}
+	\includegraphics{./pictures/sys_G1.tikz}
 \end{frame}
 \begin{frame}
 	\frametitle{Results from the theoretical validation}
@@ -93,7 +93,7 @@
 			G_1(s) = \frac{G_{J}}{1+G_p(s)G_J(s)}
 		\end{equation*}
 	\end{itemize}
-	\includegraphics{./pictures/sys.tikz}
+	\includegraphics{./pictures/sys_G1.tikz}
 \end{frame}
 \begin{frame}
 	\frametitle{Model obtained using PMU data}
@@ -104,7 +104,7 @@
 \begin{frame}
 	\frametitle{Main contributions}
 	\begin{itemize}
-		\item To show that the transfer function that can be identified using a PMUs is $G_1(s)$.
+		\item To show that the transfer function that can be identified using a PMU is $G_1(s)$.
 		\item To prove under which conditions a consistent estimate of $G_1(s)$ is possible.
 		\item To demonstrate the theory for identification of $G_1(s)$ on a real dataset.
 	\end{itemize}
